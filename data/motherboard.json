@@ -1,0 +1,468 @@
+[
+  {
+    "id": "msi-b760m-a-wifi-matx",
+    "slug": "b760m-a-wifi-matx",
+    "name": "B760M-A WiFi (mATX)",
+    "brand": "MSI / ASUS",
+    "platform": "Intel LGA1700",
+    "socket": "LGA1700",
+    "chipset": "B760",
+    "formFactor": "Micro-ATX",
+    "ramType": "DDR5",
+    "ramSlots": 4,
+    "maxRamGb": 128,
+    "memorySupport": [
+      "DDR5"
+    ],
+    "pcieGeneration": "PCIe 4.0",
+    "pcieX16Slots": 1,
+    "pcieX1Slots": 2,
+    "m2Slots": 2,
+    "sataPorts": 4,
+    "wifi": true,
+    "bluetooth": true,
+    "ethernet": "2.5Gb",
+    "cpuOverclocking": false,
+    "memoryOverclocking": true,
+    "biosFlashback": true,
+    "usbPortsRear": 6,
+    "typeCPortsRear": 0,
+    "audioCodec": "Realtek ALC897",
+    "supportedCpuGenerations": [
+      "Intel 12th Gen",
+      "Intel 13th Gen",
+      "Intel 14th Gen"
+    ],
+    "launchYear": 2023,
+    "priceMin": 9500,
+    "priceMax": 11500,
+    "tier": "Budget-Mid",
+    "useCases": [
+      "Budget Gaming",
+      "Office",
+      "Entry Build"
+    ],
+    "description": "The standard budget board for non-K Intel 12th/13th/14th Gen builds. No CPU overclocking support (not needed for non-K chips), built-in WiFi 6, solid VRM for locked CPUs like the i5-13400F/14400F.",
+    "pros": [
+      "Affordable",
+      "Built-in WiFi",
+      "Good VRM for non-K CPUs"
+    ],
+    "cons": [
+      "No overclocking support",
+      "Limited PCIe expansion"
+    ],
+    "vrmQuality": "Good",
+    "rgbHeaders": 2,
+    "scoreValue": 75,
+    "lastVerified": "2026-06",
+    "price": "₹9,500–11,500"
+  },
+  {
+    "id": "gigabyte-z790-aorus-elite-ax-atx",
+    "slug": "z790-aorus-elite-ax-atx",
+    "name": "Z790 AORUS Elite AX (ATX)",
+    "brand": "GIGABYTE",
+    "platform": "Intel LGA1700",
+    "socket": "LGA1700",
+    "chipset": "Z790",
+    "formFactor": "ATX",
+    "ramType": "DDR5",
+    "ramSlots": 4,
+    "maxRamGb": 192,
+    "memorySupport": [
+      "DDR5"
+    ],
+    "pcieGeneration": "PCIe 5.0",
+    "pcieX16Slots": 3,
+    "pcieX1Slots": 0,
+    "m2Slots": 4,
+    "sataPorts": 6,
+    "wifi": true,
+    "bluetooth": true,
+    "ethernet": "2.5Gb",
+    "cpuOverclocking": true,
+    "memoryOverclocking": true,
+    "biosFlashback": true,
+    "usbPortsRear": 10,
+    "typeCPortsRear": 1,
+    "audioCodec": "Realtek ALC897",
+    "supportedCpuGenerations": [
+      "Intel 12th Gen",
+      "Intel 13th Gen",
+      "Intel 14th Gen"
+    ],
+    "launchYear": 2022,
+    "priceMin": 25000,
+    "priceMax": 31500,
+    "tier": "High-End",
+    "useCases": [
+      "Gaming",
+      "Content Creation",
+      "Overclocking"
+    ],
+    "description": "The go-to enthusiast board for K-series Intel CPUs (12700K/13700K/14700K). Robust VRM design handles sustained overclocking, 4 M.2 slots for ample fast storage, PCIe 5.0 ready for next-gen GPUs.",
+    "pros": [
+      "Strong VRM for overclocking",
+      "4 M.2 slots",
+      "PCIe 5.0 support"
+    ],
+    "cons": [
+      "Premium pricing vs B760",
+      "Overkill for non-K CPUs"
+    ],
+    "vrmQuality": "Excellent",
+    "rgbHeaders": 4,
+    "scoreValue": 88,
+    "lastVerified": "2026-06",
+    "price": "₹25,000–31,500"
+  },
+  {
+    "id": "msi-b860m-gaming-plus-wifi-matx",
+    "slug": "b860m-gaming-plus-wifi-matx",
+    "name": "B860M Gaming Plus WiFi (mATX)",
+    "brand": "MSI",
+    "platform": "Intel LGA1851",
+    "socket": "LGA1851",
+    "chipset": "B860",
+    "formFactor": "Micro-ATX",
+    "ramType": "DDR5",
+    "ramSlots": 4,
+    "maxRamGb": 192,
+    "memorySupport": [
+      "DDR5"
+    ],
+    "pcieGeneration": "PCIe 5.0",
+    "pcieX16Slots": 1,
+    "pcieX1Slots": 1,
+    "m2Slots": 2,
+    "sataPorts": 4,
+    "wifi": true,
+    "bluetooth": true,
+    "ethernet": "2.5Gb",
+    "cpuOverclocking": false,
+    "memoryOverclocking": true,
+    "biosFlashback": true,
+    "usbPortsRear": 6,
+    "typeCPortsRear": 1,
+    "audioCodec": "Realtek ALC897",
+    "supportedCpuGenerations": [
+      "Intel Core Ultra 200 Series"
+    ],
+    "launchYear": 2024,
+    "priceMin": 16500,
+    "priceMax": 19800,
+    "tier": "Budget-Mid",
+    "useCases": [
+      "Budget-Mid Gaming",
+      "Office",
+      "Entry Arrow Lake Build"
+    ],
+    "description": "Entry point into the current Intel platform for non-K Core Ultra chips. DDR5-only keeps cost slightly higher than equivalent older-gen DDR4 boards but unlocks the current generation's efficiency gains.",
+    "pros": [
+      "Current platform entry point",
+      "Built-in WiFi",
+      "Reasonable price for new socket"
+    ],
+    "cons": [
+      "DDR5-only adds platform cost",
+      "No overclocking"
+    ],
+    "vrmQuality": "Good",
+    "rgbHeaders": 2,
+    "scoreValue": 78,
+    "lastVerified": "2026-06",
+    "price": "₹16,500–19,800"
+  },
+  {
+    "id": "gigabyte-z890-aorus-master-atx",
+    "slug": "z890-aorus-master-atx",
+    "name": "Z890 AORUS Master (ATX)",
+    "brand": "GIGABYTE",
+    "platform": "Intel LGA1851",
+    "socket": "LGA1851",
+    "chipset": "Z890",
+    "formFactor": "ATX",
+    "ramType": "DDR5",
+    "ramSlots": 4,
+    "maxRamGb": 256,
+    "memorySupport": [
+      "DDR5"
+    ],
+    "pcieGeneration": "PCIe 5.0",
+    "pcieX16Slots": 3,
+    "pcieX1Slots": 0,
+    "m2Slots": 5,
+    "sataPorts": 6,
+    "wifi": true,
+    "bluetooth": true,
+    "ethernet": "10Gb",
+    "cpuOverclocking": true,
+    "memoryOverclocking": true,
+    "biosFlashback": true,
+    "usbPortsRear": 14,
+    "typeCPortsRear": 2,
+    "audioCodec": "Realtek ALC1220",
+    "supportedCpuGenerations": [
+      "Intel Core Ultra 200 Series"
+    ],
+    "launchYear": 2024,
+    "priceMin": 54000,
+    "priceMax": 74000,
+    "tier": "Flagship",
+    "useCases": [
+      "Gaming",
+      "Professional Workstation",
+      "AI/ML Workstation"
+    ],
+    "description": "Premium current-gen Intel board for K-series Core Ultra 9/7 chips. 5 M.2 slots and 256GB max RAM make this suitable for workstation use as well as high-end gaming, with robust VRM for sustained loads.",
+    "pros": [
+      "256GB max RAM for workstation use",
+      "5 M.2 slots",
+      "Top-tier VRM"
+    ],
+    "cons": [
+      "Expensive",
+      "Overkill for casual gaming builds"
+    ],
+    "vrmQuality": "Extreme",
+    "rgbHeaders": 4,
+    "scoreValue": 95,
+    "lastVerified": "2026-06",
+    "price": "₹54,000–74,000"
+  },
+  {
+    "id": "msi-a520m-a-pro-matx",
+    "slug": "a520m-a-pro-matx",
+    "name": "A520M-A PRO (mATX)",
+    "brand": "MSI",
+    "platform": "AMD AM4",
+    "socket": "AM4",
+    "chipset": "A520",
+    "formFactor": "Micro-ATX",
+    "ramType": "DDR4",
+    "ramSlots": 2,
+    "maxRamGb": 64,
+    "memorySupport": [
+      "DDR4"
+    ],
+    "pcieGeneration": "PCIe 3.0",
+    "pcieX16Slots": 1,
+    "pcieX1Slots": 1,
+    "m2Slots": 1,
+    "sataPorts": 4,
+    "wifi": false,
+    "bluetooth": false,
+    "ethernet": "1Gb",
+    "cpuOverclocking": false,
+    "memoryOverclocking": true,
+    "biosFlashback": false,
+    "usbPortsRear": 6,
+    "typeCPortsRear": 0,
+    "audioCodec": "Realtek ALC892",
+    "supportedCpuGenerations": [
+      "Ryzen 3000",
+      "Ryzen 4000",
+      "Ryzen 5000"
+    ],
+    "launchYear": 2020,
+    "priceMin": 4000,
+    "priceMax": 5400,
+    "tier": "Budget",
+    "useCases": [
+      "Budget Gaming",
+      "Office",
+      "Entry Build"
+    ],
+    "description": "The cheapest viable AM4 board, suited for Ryzen 5 5600/5600G builds on a tight budget. No overclocking, limited expansion, but gets the job done for entry-level gaming PCs.",
+    "pros": [
+      "Very cheap",
+      "Reliable for budget Ryzen 5000 builds"
+    ],
+    "cons": [
+      "Only 2 RAM slots",
+      "No WiFi",
+      "Single M.2 slot"
+    ],
+    "vrmQuality": "Basic",
+    "rgbHeaders": 0,
+    "scoreValue": 60,
+    "lastVerified": "2026-06",
+    "price": "₹4,000–5,400"
+  },
+  {
+    "id": "msi-b550-tomahawk-atx",
+    "slug": "b550-tomahawk-atx",
+    "name": "B550 Tomahawk (ATX)",
+    "brand": "MSI",
+    "platform": "AMD AM4",
+    "socket": "AM4",
+    "chipset": "B550",
+    "formFactor": "ATX",
+    "ramType": "DDR4",
+    "ramSlots": 4,
+    "maxRamGb": 128,
+    "memorySupport": [
+      "DDR4"
+    ],
+    "pcieGeneration": "PCIe 4.0",
+    "pcieX16Slots": 2,
+    "pcieX1Slots": 2,
+    "m2Slots": 2,
+    "sataPorts": 6,
+    "wifi": false,
+    "bluetooth": false,
+    "ethernet": "2.5Gb",
+    "cpuOverclocking": true,
+    "memoryOverclocking": true,
+    "biosFlashback": true,
+    "usbPortsRear": 6,
+    "typeCPortsRear": 1,
+    "audioCodec": "Realtek ALC1200",
+    "supportedCpuGenerations": [
+      "Ryzen 3000",
+      "Ryzen 4000",
+      "Ryzen 5000"
+    ],
+    "launchYear": 2020,
+    "priceMin": 11000,
+    "priceMax": 14000,
+    "tier": "Mid-Range",
+    "useCases": [
+      "Gaming",
+      "Content Creation",
+      "Overclocking"
+    ],
+    "description": "The single most popular AM4 board of its generation - excellent VRM for the price, full overclocking support for Ryzen 5000 X-series chips, and PCIe 4.0 for fast NVMe storage and modern GPUs.",
+    "pros": [
+      "Excellent VRM for the price",
+      "Full overclocking support",
+      "PCIe 4.0"
+    ],
+    "cons": [
+      "No built-in WiFi (add-in card needed)",
+      "Aging platform by 2026"
+    ],
+    "vrmQuality": "Excellent",
+    "rgbHeaders": 4,
+    "scoreValue": 85,
+    "lastVerified": "2026-06",
+    "price": "₹11,000–14,000"
+  },
+  {
+    "id": "msi-b650m-a-wifi-matx",
+    "slug": "b650m-a-wifi-matx",
+    "name": "B650M-A WiFi (mATX)",
+    "brand": "MSI / ASUS",
+    "platform": "AMD AM5",
+    "socket": "AM5",
+    "chipset": "B650",
+    "formFactor": "Micro-ATX",
+    "ramType": "DDR5",
+    "ramSlots": 4,
+    "maxRamGb": 192,
+    "memorySupport": [
+      "DDR5"
+    ],
+    "pcieGeneration": "PCIe 4.0",
+    "pcieX16Slots": 1,
+    "pcieX1Slots": 2,
+    "m2Slots": 2,
+    "sataPorts": 4,
+    "wifi": true,
+    "bluetooth": true,
+    "ethernet": "2.5Gb",
+    "cpuOverclocking": true,
+    "memoryOverclocking": true,
+    "biosFlashback": true,
+    "usbPortsRear": 8,
+    "typeCPortsRear": 1,
+    "audioCodec": "Realtek ALC897",
+    "supportedCpuGenerations": [
+      "Ryzen 7000",
+      "Ryzen 8000",
+      "Ryzen 9000"
+    ],
+    "launchYear": 2022,
+    "priceMin": 13500,
+    "priceMax": 15300,
+    "tier": "Budget-Mid",
+    "useCases": [
+      "Budget-Mid Gaming",
+      "Entry AM5 Build"
+    ],
+    "description": "The standard entry board for Ryzen 7000/9000 non-X3D builds. Supports overclocking unlike Intel's equivalent B-series, since AMD allows OC across most chipsets. Solid choice for budget-conscious current-gen builds.",
+    "pros": [
+      "Overclocking supported even on B-chipset",
+      "Built-in WiFi",
+      "Future AM5 CPU upgrade path"
+    ],
+    "cons": [
+      "DDR5-only raises platform entry cost"
+    ],
+    "vrmQuality": "Good",
+    "rgbHeaders": 3,
+    "scoreValue": 80,
+    "lastVerified": "2026-06",
+    "price": "₹13,500–15,300"
+  },
+  {
+    "id": "gigabyte-x670e-aorus-master-atx",
+    "slug": "x670e-aorus-master-atx",
+    "name": "X670E AORUS Master (ATX)",
+    "brand": "GIGABYTE",
+    "platform": "AMD AM5",
+    "socket": "AM5",
+    "chipset": "X670E",
+    "formFactor": "ATX",
+    "ramType": "DDR5",
+    "ramSlots": 4,
+    "maxRamGb": 256,
+    "memorySupport": [
+      "DDR5"
+    ],
+    "pcieGeneration": "PCIe 5.0",
+    "pcieX16Slots": 3,
+    "pcieX1Slots": 0,
+    "m2Slots": 5,
+    "sataPorts": 6,
+    "wifi": true,
+    "bluetooth": true,
+    "ethernet": "2.5Gb",
+    "cpuOverclocking": true,
+    "memoryOverclocking": true,
+    "biosFlashback": true,
+    "usbPortsRear": 12,
+    "typeCPortsRear": 2,
+    "audioCodec": "Realtek ALC1220",
+    "supportedCpuGenerations": [
+      "Ryzen 7000",
+      "Ryzen 8000",
+      "Ryzen 9000"
+    ],
+    "launchYear": 2022,
+    "priceMin": 42000,
+    "priceMax": 52000,
+    "tier": "Flagship",
+    "useCases": [
+      "Gaming",
+      "AI/ML Workstation",
+      "Professional Rendering"
+    ],
+    "description": "Premium AM5 board with full PCIe 5.0 support for both GPU and storage, 5 M.2 slots, and a robust VRM suited for Ryzen 9 9950X3D and similar flagship chips under sustained workstation loads.",
+    "pros": [
+      "Full PCIe 5.0 on GPU and M.2",
+      "5 M.2 slots",
+      "Top-tier VRM for flagship CPUs"
+    ],
+    "cons": [
+      "Expensive",
+      "Overkill for budget/mid builds"
+    ],
+    "vrmQuality": "Extreme",
+    "rgbHeaders": 4,
+    "scoreValue": 92,
+    "lastVerified": "2026-06",
+    "price": "₹42,000–52,000"
+  }
+]

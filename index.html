@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ForgePC - Build Your Perfect PC</title>
+    <meta name="description" content="ForgePC - AI Powered PC Builder. Build, customize, and find the best parts for your next PC.">
+    <meta property="og:title" content="ForgePC - AI Powered PC Builder">
+    <meta property="og:description" content="Intelligently build, customize, and find the best PC parts with compatibility checks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forgepc.com/">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+    <script defer src="assets/js/data.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <style>
+        .trust-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 3rem 1.5rem;
+            background-color: var(--card);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        .trust-stat {
+            text-align: center;
+        }
+        .trust-stat h3 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .trust-stat p {
+            color: var(--text-muted);
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+        .featured-build {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+        }
+        @media(min-width: 768px) {
+            .featured-build {
+                flex-direction: row;
+                justify-content: space-between;
+                background-color: var(--surface);
+                padding: 3rem;
+                border-radius: 12px;
+                border: 1px solid var(--border);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    <div class="cursor-dot"></div>
+    <nav class="navbar" aria-label="Main Navigation">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo" aria-label="ForgePC Home">Forge<span>PC</span></a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active-nav">Home</a></li>
+                <li><a href="build.html">Build with AI</a></li>
+                <li><a href="search.html">Search Parts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Sign up / Sign in</a></li>
+                <li style="margin-left: 1rem;"><button id="theme-toggle" class="btn btn-outline" style="padding: 0.4rem 0.8rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;" aria-label="Toggle Theme">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero section-padding" style="position: relative; z-index: 1; overflow: hidden; min-height: 80vh; display: flex; align-items: center;">
+            <div id="particles-js" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+            <div class="hero-glow"></div>
+            
+            <!-- Floating Background Elements -->
+            <div class="floating-element delay-1">💽</div>
+            <div class="floating-element delay-2">🖥️</div>
+            <div class="floating-element delay-3">⚡</div>
+
+            <div class="container text-center reveal">
+                <div class="glass-panel" style="max-width: 800px; margin: 0 auto;">
+                    <h1 class="mb-2">Craft Your Ultimate Rig with <span>AI</span></h1>
+                    <p class="mb-4" style="font-size: 1.15rem; color: var(--text-primary); line-height: 1.6;">Intelligent recommendations, real-time compatibility checks, and the best prices across the web. Forge your dream PC today.</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="build.html" class="btn btn-primary btn-pulse" style="font-size: 1.1rem; padding: 1rem 2.5rem; text-transform: uppercase; letter-spacing: 1px;">Build with AI</a>
+                        <a href="search.html" class="btn btn-outline" style="font-size: 1.1rem; padding: 1rem 2.5rem; background: rgba(0,0,0,0.5);">Browse Parts</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-strip mb-4 reveal">
+            <div class="container" style="display: contents;">
+                <div class="trust-stat">
+                    <h3 class="count-up neon-text" data-target="15000">0</h3>
+                    <p>Builds Generated</p>
+                </div>
+                <div class="trust-stat">
+                    <h3 class="count-up" data-target="100" data-suffix="%">0</h3>
+                    <p>Compatibility Checked</p>
+                </div>
+                <div class="trust-stat">
+                    <h3>Real-Time</h3>
+                    <p>Indian Market Pricing</p>
+                </div>
+                <div class="trust-stat">
+                    <h3 class="count-up" data-target="150" data-suffix="+">0</h3>
+                    <p>Curated Components</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="popular-use-cases section-padding reveal">
+            <div class="container">
+                <h2 class="text-center mb-4 neon-text">Popular Use Cases</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem;">
+                    <div class="card glow-card text-center use-case-interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05" style="padding-bottom: 2rem;">
+                        <div class="emoji-animate" style="font-size: 2.8rem; margin-bottom: 1rem;">🎮</div>
+                        <h4 class="mb-2 neon-text-small">Gaming</h4>
+                        <p class="mb-2" style="position: relative; z-index: 1;">Max FPS for AAA titles at 1440p and 4K resolutions.</p>
+                        <a href="build.html?usecase=gaming" class="btn btn-outline" style="width: 100%; position: relative; z-index: 1;">Build for Gaming</a>
+                    </div>
+                    <div class="card glow-card text-center use-case-interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05" style="padding-bottom: 2rem;">
+                        <div class="emoji-animate" style="font-size: 2.8rem; margin-bottom: 1rem;">🎬</div>
+                        <h4 class="mb-2 neon-text-small">Content Creation</h4>
+                        <p class="mb-2" style="position: relative; z-index: 1;">Heavy multi-threading and fast storage for video editing.</p>
+                        <a href="build.html?usecase=creation" class="btn btn-outline" style="width: 100%; position: relative; z-index: 1;">Build for Creators</a>
+                    </div>
+                    <div class="card glow-card text-center use-case-interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05" style="padding-bottom: 2rem;">
+                        <div class="emoji-animate" style="font-size: 2.8rem; margin-bottom: 1rem;">🧠</div>
+                        <h4 class="mb-2 neon-text-small">AI-ML Workstation</h4>
+                        <p class="mb-2" style="position: relative; z-index: 1;">Massive VRAM and tensor cores for deep learning.</p>
+                        <a href="build.html?usecase=aiml" class="btn btn-outline" style="width: 100%; position: relative; z-index: 1;">Build for AI</a>
+                    </div>
+                    <div class="card glow-card text-center use-case-interactive" data-tilt data-tilt-glare data-tilt-max-glare="0.5" data-tilt-scale="1.05" style="padding-bottom: 2rem;">
+                        <div class="emoji-animate" style="font-size: 2.8rem; margin-bottom: 1rem;">💼</div>
+                        <h4 class="mb-2 neon-text-small">Budget Office</h4>
+                        <p class="mb-2" style="position: relative; z-index: 1;">Reliable, snappy, and cost-effective daily drivers.</p>
+                        <a href="build.html?usecase=office" class="btn btn-outline" style="width: 100%; position: relative; z-index: 1;">Build for Office</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding reveal">
+            <div class="container">
+                <div class="featured-build glow-card" data-tilt data-tilt-max="5" data-tilt-perspective="1000" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.2" style="overflow: hidden; position: relative;">
+                    <!-- Background Accent -->
+                    <div style="position: absolute; top: -50%; right: -20%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(255, 138, 61, 0.05) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+                    <div style="flex: 1; z-index: 2;">
+                        <div style="display: inline-block; padding: 0.3rem 0.8rem; background: rgba(255, 138, 61, 0.15); color: var(--primary); border-radius: 20px; font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1rem;">Featured Build</div>
+                        <h2 class="mb-2">The 1440p Sweet Spot</h2>
+                        <p class="text-muted mb-4" style="font-size: 1.05rem;">Experience ultra settings in modern games without breaking the bank. Powered by Ryzen 5 and RTX 4070.</p>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+                            <div class="glass-panel" style="padding: 1rem; text-align: center; border-radius: 12px; background: rgba(255,255,255,0.02);">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⚙️</div>
+                                <div style="font-weight: 600; font-size: 0.9rem;">AMD Ryzen 5 7600X</div>
+                            </div>
+                            <div class="glass-panel" style="padding: 1rem; text-align: center; border-radius: 12px; background: rgba(255,255,255,0.02);">
+                                <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🎮</div>
+                                <div style="font-weight: 600; font-size: 0.9rem;">NVIDIA RTX 4070</div>
+                            </div>
+                        </div>
+                        
+                        <a href="build.html" class="btn btn-primary">Customize This Build</a>
+                    </div>
+                    <div style="flex: 1; text-align: center; display: flex; justify-content: center; align-items: center; min-height: 250px;">
+                        <div class="featured-core">
+                            <div style="font-size: 4rem;">⚡</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="align-items: flex-start;">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">Forge<span>PC</span></a>
+                    <p class="text-muted" style="max-width: 300px;">AI-powered PC builder helping you find the perfect components with guaranteed compatibility.</p>
+                </div>
+                <div>
+                    <h4 class="mb-2">Navigation</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+                        <li><a href="build.html" style="color: var(--text-muted); text-decoration: none;">Build with AI</a></li>
+                        <li><a href="search.html" style="color: var(--text-muted); text-decoration: none;">Search Parts</a></li>
+                        <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+                        <li><a href="login.html" style="color: var(--text-muted); text-decoration: none;">Sign up / Sign in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-text mt-4" style="border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center;">
+                &copy; 2026 ForgePC. All rights reserved. Prices and availability are subject to change based on real market data.
+                <div style="margin-top: 0.5rem; font-weight: 600; color: var(--primary);">Made for Indian Builders 🇮🇳</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

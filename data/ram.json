@@ -1,0 +1,209 @@
+{
+  "component": "RAM",
+  "lastUpdated": "2026-06",
+  "coverage": "2020-2026",
+  "types": {
+    "DDR4": {
+      "description": "The dominant RAM standard from 2014 through 2022, still widely used in 2026 for budget builds on older Intel 12th/13th/14th Gen and AMD AM4 platforms. Cheaper and more mature than DDR5, with lower theoretical bandwidth.",
+      "kits": [
+        {
+          "name": "Generic DDR4-3200 16GB (2x8GB)",
+          "capacity": "16GB (2x8GB)",
+          "speed": "3200 MHz",
+          "casLatency": "CL16",
+          "voltage": "1.35V",
+          "rgb": false,
+          "launched": "2020-2023 (still in production)",
+          "price": "₹2,500–3,500",
+          "tier": "Budget",
+          "useCase": [
+            "Budget Gaming",
+            "Office",
+            "Entry Build"
+          ],
+          "desc": "The baseline standard for budget builds on AM4/LGA1700 platforms. 3200MHz at CL16 hits the sweet spot for AMD's Infinity Fabric on Ryzen 5000 series. Adequate for 1080p gaming and general productivity.",
+          "pros": [
+            "Cheapest viable kit",
+            "Matches Ryzen Infinity Fabric well",
+            "Widely compatible"
+          ],
+          "cons": [
+            "16GB tight for modern multitasking + gaming",
+            "Lower bandwidth than DDR5"
+          ],
+          "priceMin": 2500,
+          "priceMax": 3500
+        },
+        {
+          "name": "Corsair Vengeance LPX DDR4-3600 32GB (2x16GB)",
+          "capacity": "32GB (2x16GB)",
+          "speed": "3600 MHz",
+          "casLatency": "CL18",
+          "voltage": "1.35V",
+          "rgb": false,
+          "launched": "2021",
+          "price": "₹6,500–8,500",
+          "tier": "Mid-Range",
+          "useCase": [
+            "Gaming",
+            "Content Creation",
+            "Multitasking"
+          ],
+          "desc": "The most popular DDR4 capacity/speed combo for serious gaming and content creation builds. 32GB headroom comfortably handles modern games plus background apps, streaming software, and browser tabs simultaneously.",
+          "pros": [
+            "32GB future-proofs multitasking",
+            "3600MHz good for AM4 platforms",
+            "Reliable, low failure rate"
+          ],
+          "cons": [
+            "Not expandable cheaply if DDR4 supply dwindles further"
+          ],
+          "priceMin": 6500,
+          "priceMax": 8500
+        },
+        {
+          "name": "G.Skill Trident Z RGB DDR4-3600 32GB (2x16GB)",
+          "capacity": "32GB (2x16GB)",
+          "speed": "3600 MHz",
+          "casLatency": "CL16",
+          "voltage": "1.35V",
+          "rgb": true,
+          "launched": "2020",
+          "price": "₹17,900–26,000",
+          "tier": "High-End",
+          "useCase": [
+            "Gaming",
+            "Streaming",
+            "Content Creation"
+          ],
+          "desc": "Tighter CL16 timings than the budget-tier kits for better real-world latency-sensitive gaming performance, plus RGB for aesthetic builds. A favorite in showcase gaming PCs on the AM4/LGA1700 platforms.",
+          "pros": [
+            "Tighter CL16 timings",
+            "RGB for aesthetic builds",
+            "Strong overclocking headroom"
+          ],
+          "cons": [
+            "Premium over non-RGB equivalents",
+            "DDR4 ceiling approaching as DDR5 matures"
+          ],
+          "priceMin": 17900,
+          "priceMax": 26000
+        }
+      ]
+    },
+    "DDR5": {
+      "description": "The current-generation RAM standard since 2022, mandatory on Intel Core Ultra (Arrow Lake) and AMD AM5 platforms. Higher bandwidth, EXPO/XMP 3.0 profiles, and on-die ECC, at a price premium that has shrunk significantly by 2026.",
+      "kits": [
+        {
+          "name": "Kingston Fury Beast DDR5-5200 16GB (2x8GB)",
+          "capacity": "16GB (2x8GB)",
+          "speed": "5200 MHz",
+          "casLatency": "CL40",
+          "voltage": "1.25V",
+          "rgb": false,
+          "launched": "2022",
+          "price": "₹4,500–5,500",
+          "tier": "Budget",
+          "useCase": [
+            "Budget Gaming",
+            "Entry AM5/LGA1700 Build"
+          ],
+          "desc": "Entry point into DDR5 for budget AM5 or Arrow Lake builds. JEDEC-friendly 5200MHz speed runs without needing aggressive XMP/EXPO tuning, keeping stability high on cheaper motherboards.",
+          "pros": [
+            "Affordable DDR5 entry",
+            "Stable on budget boards",
+            "Low power draw"
+          ],
+          "cons": [
+            "16GB capacity tight for 2026 multitasking",
+            "Higher CAS latency vs faster kits"
+          ],
+          "priceMin": 4500,
+          "priceMax": 5500
+        },
+        {
+          "name": "G.Skill Flare X5 DDR5-6000 32GB (2x16GB)",
+          "capacity": "32GB (2x16GB)",
+          "speed": "6000 MHz",
+          "casLatency": "CL30",
+          "voltage": "1.35V",
+          "rgb": false,
+          "launched": "2023",
+          "price": "₹9,500–11,500",
+          "tier": "Mid-Range",
+          "useCase": [
+            "Gaming",
+            "Content Creation",
+            "AI/ML Workstation"
+          ],
+          "desc": "The well-known sweet spot for AMD Ryzen 7000/9000 series - 6000MHz CL30 is the optimal Infinity Fabric ratio for AM5, delivering the best real-world gaming latency without paying for unnecessary speed beyond this point.",
+          "pros": [
+            "Optimal AM5 Infinity Fabric speed",
+            "32GB comfortable for most workloads",
+            "EXPO certified"
+          ],
+          "cons": [
+            "Premium over budget DDR5 kits"
+          ],
+          "priceMin": 9500,
+          "priceMax": 11500
+        },
+        {
+          "name": "Corsair Dominator Titanium DDR5-6400 64GB (2x32GB)",
+          "capacity": "64GB (2x32GB)",
+          "speed": "6400 MHz",
+          "casLatency": "CL32",
+          "voltage": "1.40V",
+          "rgb": true,
+          "launched": "2024",
+          "price": "₹1,12,000–1,50,000",
+          "tier": "High-End",
+          "useCase": [
+            "AI/ML Workstation",
+            "Professional Rendering",
+            "Heavy Multitasking",
+            "Server"
+          ],
+          "desc": "High-capacity kit aimed at content creators, AI/ML hobbyists running local LLMs, and professionals juggling large Premiere/DaVinci/Blender projects alongside dozens of browser tabs and VMs.",
+          "pros": [
+            "64GB handles heavy local AI/LLM workloads",
+            "Excellent build quality",
+            "RGB + premium aesthetics"
+          ],
+          "cons": [
+            "Expensive",
+            "Overkill for pure gaming use cases"
+          ],
+          "priceMin": 112000,
+          "priceMax": 150000
+        },
+        {
+          "name": "Kingston Fury Renegade DDR5-7200 32GB (2x16GB)",
+          "capacity": "32GB (2x16GB)",
+          "speed": "7200 MHz",
+          "casLatency": "CL34",
+          "voltage": "1.40V",
+          "rgb": true,
+          "launched": "2025",
+          "price": "₹26,000–35,000",
+          "tier": "High-End",
+          "useCase": [
+            "Gaming",
+            "Content Creation"
+          ],
+          "desc": "Current-gen high-speed kit tuned for Intel Arrow Lake and AMD AM5 platforms that can take advantage of higher memory controller headroom. Notable gaming uplift in memory-bandwidth-sensitive titles.",
+          "pros": [
+            "High bandwidth for latest platforms",
+            "Strong gaming uplift in sensitive titles",
+            "EXPO/XMP ready"
+          ],
+          "cons": [
+            "Needs a capable motherboard memory controller to hit rated speed reliably"
+          ],
+          "priceMin": 26000,
+          "priceMax": 35000
+        }
+      ]
+    }
+  }
+}

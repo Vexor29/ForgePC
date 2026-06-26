@@ -1,0 +1,206 @@
+{
+  "component": "Storage",
+  "lastUpdated": "2026-06",
+  "coverage": "2020-2026",
+  "categories": {
+    "SATA SSD": {
+      "description": "Legacy but still relevant interface for budget builds or secondary/bulk storage. Maxes out around 550 MB/s due to the SATA III bus limit.",
+      "drives": [
+        {
+          "name": "Crucial MX500 500GB",
+          "capacity": "500GB",
+          "interface": "SATA III",
+          "readSpeed": "560 MB/s",
+          "writeSpeed": "510 MB/s",
+          "formFactor": "2.5-inch",
+          "tbw": "180 TBW",
+          "launched": "2020",
+          "price": "₹3,100–5,200",
+          "tier": "Budget",
+          "useCase": [
+            "Budget Build",
+            "Office",
+            "Secondary Storage"
+          ],
+          "desc": "A reliable, long-running budget SATA SSD recommendation, ideal as an affordable boot drive or secondary storage where NVMe speed isn't necessary. Still widely available and trusted in 2026.",
+          "pros": [
+            "Very reliable",
+            "Affordable",
+            "Good for budget boot drives"
+          ],
+          "cons": [
+            "SATA bus speed ceiling",
+            "Slower than any NVMe option"
+          ],
+          "priceMin": 3100,
+          "priceMax": 5200
+        }
+      ]
+    },
+    "NVMe Gen3": {
+      "description": "PCIe 3.0-based NVMe drives, common on budget-mid builds and older platforms. Up to ~3500 MB/s, a major step up from SATA.",
+      "drives": [
+        {
+          "name": "WD Blue SN570 1TB",
+          "capacity": "1TB",
+          "interface": "PCIe 3.0 NVMe",
+          "readSpeed": "3500 MB/s",
+          "writeSpeed": "3000 MB/s",
+          "formFactor": "M.2 2280",
+          "tbw": "600 TBW",
+          "launched": "2021",
+          "price": "₹5,500–7,000",
+          "tier": "Budget-Mid",
+          "useCase": [
+            "Gaming",
+            "Office",
+            "Boot Drive"
+          ],
+          "desc": "The standard budget-friendly NVMe boot drive recommendation - meaningfully faster than SATA for game load times and OS responsiveness, without paying for Gen4 speeds most users won't notice in daily use.",
+          "pros": [
+            "Great value NVMe option",
+            "Solid game load time improvement over SATA",
+            "Reliable"
+          ],
+          "cons": [
+            "Not as fast as Gen4 for large file transfers"
+          ],
+          "priceMin": 5500,
+          "priceMax": 7000
+        }
+      ]
+    },
+    "NVMe Gen4": {
+      "description": "PCIe 4.0 NVMe drives, the current mainstream standard since 2021. Up to ~7000+ MB/s, ideal for gaming, video editing timelines, and general high-performance use.",
+      "drives": [
+        {
+          "name": "Samsung 980 Pro 1TB",
+          "capacity": "1TB",
+          "interface": "PCIe 4.0 NVMe",
+          "readSpeed": "7000 MB/s",
+          "writeSpeed": "5000 MB/s",
+          "formFactor": "M.2 2280",
+          "tbw": "600 TBW",
+          "launched": "2021",
+          "price": "₹7,500–9,500",
+          "tier": "Mid-Range",
+          "useCase": [
+            "Gaming",
+            "Content Creation",
+            "AI/ML Model Storage"
+          ],
+          "desc": "A long-trusted flagship-tier Gen4 drive, ideal for fast game loading, video editing scratch disks, and quick loading of large AI/ML model files. Excellent sustained write performance for large file transfers.",
+          "pros": [
+            "Top-tier Gen4 speeds",
+            "Excellent sustained write performance",
+            "Trusted reliability"
+          ],
+          "cons": [
+            "Premium over budget Gen4 options",
+            "Runs warm under sustained load - heatsink recommended"
+          ],
+          "priceMin": 7500,
+          "priceMax": 9500
+        },
+        {
+          "name": "Crucial T500 2TB",
+          "capacity": "2TB",
+          "interface": "PCIe 4.0 NVMe",
+          "readSpeed": "7400 MB/s",
+          "writeSpeed": "7000 MB/s",
+          "formFactor": "M.2 2280",
+          "tbw": "1200 TBW",
+          "launched": "2023",
+          "price": "₹9,500–33,000",
+          "tier": "High-End",
+          "useCase": [
+            "Content Creation",
+            "Video Editing",
+            "AI/ML Workstation",
+            "Large Game Libraries"
+          ],
+          "desc": "High-capacity Gen4 drive suited for video editors working with large 4K/RAW footage timelines and AI/ML practitioners storing multiple large model checkpoints. Comes with an optional heatsink variant for sustained workloads.",
+          "pros": [
+            "High capacity for large projects",
+            "Strong sustained write speeds",
+            "High TBW endurance rating"
+          ],
+          "cons": [
+            "Higher price for the capacity tier"
+          ],
+          "priceMin": 9500,
+          "priceMax": 33000
+        }
+      ]
+    },
+    "NVMe Gen5": {
+      "description": "Current cutting-edge interface (2023-2026), up to ~14000+ MB/s, primarily beneficial for professional workloads, very large game installs with fast load requirements, and bleeding-edge content creation pipelines. Requires a Gen5-capable motherboard slot.",
+      "drives": [
+        {
+          "name": "Samsung 9100 Pro 2TB",
+          "capacity": "2TB",
+          "interface": "PCIe 5.0 NVMe",
+          "readSpeed": "14800 MB/s",
+          "writeSpeed": "13400 MB/s",
+          "formFactor": "M.2 2280",
+          "tbw": "1200 TBW",
+          "launched": "2025",
+          "price": "₹16,000–20,000",
+          "tier": "Flagship",
+          "useCase": [
+            "Professional Rendering",
+            "AI/ML Workstation",
+            "Extreme Content Creation"
+          ],
+          "desc": "Current flagship-tier storage for professionals who need the absolute fastest scratch-disk and model-loading speeds - particularly valuable for AI/ML workstations rapidly loading and swapping large model files, and video professionals working in uncompressed 8K workflows.",
+          "pros": [
+            "Extreme sequential speeds",
+            "High endurance rating",
+            "Future-proofed for demanding workflows"
+          ],
+          "cons": [
+            "Requires Gen5-capable motherboard slot",
+            "Significant price premium",
+            "Real-world gains modest for typical gaming"
+          ],
+          "priceMin": 16000,
+          "priceMax": 20000
+        }
+      ]
+    },
+    "HDD (Bulk Storage)": {
+      "description": "Traditional spinning hard drives, still relevant in 2026 purely for cheap bulk/archival storage where speed doesn't matter - media libraries, backups, NAS/server use.",
+      "drives": [
+        {
+          "name": "Seagate IronWolf 4TB",
+          "capacity": "4TB",
+          "interface": "SATA III",
+          "readSpeed": "180 MB/s",
+          "writeSpeed": "180 MB/s",
+          "formFactor": "3.5-inch",
+          "tbw": "N/A (rated for 24/7 NAS use)",
+          "launched": "2020",
+          "price": "₹10,000–23,800",
+          "tier": "Budget-Mid",
+          "useCase": [
+            "Server/NAS",
+            "Bulk Storage",
+            "Backup"
+          ],
+          "desc": "NAS-rated hard drive built for 24/7 operation, common in home server and NAS builds for media libraries and backup redundancy where raw capacity-per-rupee matters far more than speed.",
+          "pros": [
+            "Excellent capacity-per-rupee",
+            "Rated for 24/7 NAS operation",
+            "Reliable for archival use"
+          ],
+          "cons": [
+            "Slow compared to any SSD",
+            "Not suitable as a boot or active-use drive"
+          ],
+          "priceMin": 10000,
+          "priceMax": 23800
+        }
+      ]
+    }
+  }
+}

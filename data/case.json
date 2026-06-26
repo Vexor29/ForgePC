@@ -1,0 +1,179 @@
+{
+  "component": "Case",
+  "lastUpdated": "2026-06",
+  "coverage": "2020-2026",
+  "cases": [
+    {
+      "name": "Ant Esports ICE-130AG",
+      "formFactor": "Mid Tower (ATX)",
+      "motherboardSupport": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX"
+      ],
+      "maxGpuLength": "320mm",
+      "fansIncluded": 3,
+      "fanMounts": "Up to 6",
+      "radiatorSupport": "Up to 240mm front/top",
+      "sidePanel": "Tempered Glass",
+      "launched": "2021",
+      "price": "₹2,750–3,500",
+      "tier": "Budget",
+      "useCase": [
+        "Budget Build",
+        "Office",
+        "Entry Gaming"
+      ],
+      "desc": "One of the most popular budget cases in the Indian market - solid airflow for the price with 3 pre-installed ARGB fans, tempered glass side panel, and enough GPU clearance for most mid-range cards.",
+      "pros": [
+        "Excellent value with 3 fans included",
+        "Good airflow design",
+        "Tempered glass at budget price"
+      ],
+      "cons": [
+        "Build quality plastic-heavy",
+        "Cable management space limited"
+      ],
+      "priceMin": 2750,
+      "priceMax": 3500
+    },
+    {
+      "name": "NZXT H510 Flow",
+      "formFactor": "Mid Tower (ATX)",
+      "motherboardSupport": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX"
+      ],
+      "maxGpuLength": "381mm",
+      "fansIncluded": 2,
+      "fanMounts": "Up to 6",
+      "radiatorSupport": "Up to 280mm front, 240mm top",
+      "sidePanel": "Tempered Glass",
+      "launched": "2021",
+      "price": "₹7,000–8,500",
+      "tier": "Budget-Mid",
+      "useCase": [
+        "Gaming",
+        "Content Creation"
+      ],
+      "desc": "Clean minimalist design with genuinely good cable management routing behind the motherboard tray, popular for tidy-looking budget-mid builds. The mesh front panel variant improves airflow significantly over the original solid-front H510.",
+      "pros": [
+        "Excellent cable management routing",
+        "Clean aesthetic",
+        "Good GPU clearance"
+      ],
+      "cons": [
+        "Only 2 fans included",
+        "Limited high-end radiator support"
+      ],
+      "priceMin": 7000,
+      "priceMax": 8500
+    },
+    {
+      "name": "Lian Li Lancool 215",
+      "formFactor": "Mid Tower (ATX)",
+      "motherboardSupport": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX",
+        "E-ATX (limited)"
+      ],
+      "maxGpuLength": "384mm",
+      "fansIncluded": 3,
+      "fanMounts": "Up to 7",
+      "radiatorSupport": "Up to 360mm front/top",
+      "sidePanel": "Tempered Glass",
+      "launched": "2022",
+      "price": "₹6,500–7,000",
+      "tier": "Mid-Range",
+      "useCase": [
+        "Gaming",
+        "Content Creation",
+        "High-Airflow Builds"
+      ],
+      "desc": "Renowned for exceptional airflow thanks to its mesh front and top panels - a favorite among enthusiasts building high-performance gaming PCs that need to keep flagship-tier GPUs cool under sustained load.",
+      "pros": [
+        "Outstanding airflow",
+        "3x 200mm fans included",
+        "Supports large radiators for AIO cooling"
+      ],
+      "cons": [
+        "Larger footprint",
+        "Mesh design less suited to quiet/silent builds"
+      ],
+      "priceMin": 6500,
+      "priceMax": 7000
+    },
+    {
+      "name": "Fractal Design Define 7",
+      "formFactor": "Mid Tower (ATX)",
+      "motherboardSupport": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX",
+        "E-ATX"
+      ],
+      "maxGpuLength": "440mm",
+      "fansIncluded": 2,
+      "fanMounts": "Up to 9",
+      "radiatorSupport": "Up to 360mm front/top",
+      "sidePanel": "Tempered Glass or Solid (swappable)",
+      "launched": "2020",
+      "price": "₹14,500–27,500",
+      "tier": "High-End",
+      "useCase": [
+        "Content Creation",
+        "Professional Workstation",
+        "Quiet Builds"
+      ],
+      "desc": "Premium build quality with sound-dampening material and swappable solid/mesh front panels, giving builders the choice between silence and maximum airflow. A favorite among content creators and professionals who keep their PC in the same room they work in.",
+      "pros": [
+        "Excellent sound dampening",
+        "Modular swappable panel design",
+        "Massive expansion room (E-ATX support)"
+      ],
+      "cons": [
+        "Premium pricing",
+        "Heavier than typical mid-towers"
+      ],
+      "priceMin": 14500,
+      "priceMax": 27500
+    },
+    {
+      "name": "Lian Li O11 Dynamic EVO",
+      "formFactor": "Mid Tower (ATX, Dual-Chamber)",
+      "motherboardSupport": [
+        "ATX",
+        "Micro-ATX",
+        "Mini-ITX",
+        "E-ATX"
+      ],
+      "maxGpuLength": "426mm",
+      "fansIncluded": 0,
+      "fanMounts": "Up to 9",
+      "radiatorSupport": "Up to 360mm front/top/side",
+      "sidePanel": "Dual Tempered Glass",
+      "launched": "2023",
+      "price": "₹12,000–15,000",
+      "tier": "High-End",
+      "useCase": [
+        "Gaming",
+        "Content Creation",
+        "Showcase Builds"
+      ],
+      "desc": "The go-to showcase case for high-end builds - dual-chamber design separates PSU/cables from the main build area for a clean look on both tempered glass panels. Hugely popular for premium gaming PCs meant to be displayed.",
+      "pros": [
+        "Stunning dual-glass showcase design",
+        "Excellent radiator support for custom loops",
+        "Flexible component layout"
+      ],
+      "cons": [
+        "No fans included - added cost",
+        "Requires more build planning/cable routing skill"
+      ],
+      "priceMin": 12000,
+      "priceMax": 15000
+    }
+  ]
+}

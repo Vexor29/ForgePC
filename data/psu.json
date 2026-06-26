@@ -1,0 +1,175 @@
+{
+  "component": "PSU",
+  "lastUpdated": "2026-06",
+  "coverage": "2020-2026",
+  "units": [
+    {
+      "name": "Corsair CV450",
+      "wattage": "450W",
+      "efficiency": "80+ Bronze",
+      "modular": "Non-Modular",
+      "formFactor": "ATX",
+      "atx12vhpwr": false,
+      "warranty": "3 Years",
+      "launched": "2020",
+      "price": "₹3,200–4,000",
+      "tier": "Budget",
+      "useCase": [
+        "Budget Office",
+        "Entry Gaming (no dGPU or low-power GPU)"
+      ],
+      "desc": "Bare minimum reliable PSU for budget office builds or entry systems with no discrete GPU or a very low-power one like a GTX 1650. Non-modular cabling makes cable management harder in smaller cases.",
+      "pros": [
+        "Very affordable",
+        "Reliable for low-power builds"
+      ],
+      "cons": [
+        "Non-modular",
+        "No headroom for any serious GPU upgrade"
+      ],
+      "priceMin": 3200,
+      "priceMax": 4000
+    },
+    {
+      "name": "Cooler Master MWE 550 Bronze V2",
+      "wattage": "550W",
+      "efficiency": "80+ Bronze",
+      "modular": "Non-Modular",
+      "formFactor": "ATX",
+      "atx12vhpwr": false,
+      "warranty": "5 Years",
+      "launched": "2021",
+      "price": "₹3,500–4,300",
+      "tier": "Budget-Mid",
+      "useCase": [
+        "Budget Gaming",
+        "RTX 3050/4060, RX 6600 class builds"
+      ],
+      "desc": "The standard budget gaming PSU recommendation - enough headroom for an RTX 4060 or RX 6600-class GPU paired with a mid-range CPU, with a reasonable 5-year warranty for the price point.",
+      "pros": [
+        "Good warranty for the price",
+        "Sufficient for budget gaming GPUs",
+        "80+ Bronze efficiency"
+      ],
+      "cons": [
+        "Non-modular cabling",
+        "No headroom for higher-end GPUs"
+      ],
+      "priceMin": 3500,
+      "priceMax": 4300
+    },
+    {
+      "name": "Corsair RM650x",
+      "wattage": "650W",
+      "efficiency": "80+ Gold",
+      "modular": "Fully Modular",
+      "formFactor": "ATX",
+      "atx12vhpwr": false,
+      "warranty": "10 Years",
+      "launched": "2021",
+      "price": "₹8,500–10,000",
+      "tier": "Mid-Range",
+      "useCase": [
+        "Gaming",
+        "RTX 4070/4070 Super, RX 7800 XT class builds"
+      ],
+      "desc": "One of the most recommended mid-range PSUs in the enthusiast community - fully modular cabling, excellent 80+ Gold efficiency, and a 10-year warranty reflecting genuine build quality. Comfortable headroom for RTX 4070-tier builds.",
+      "pros": [
+        "Fully modular",
+        "10-year warranty",
+        "Excellent efficiency and ripple suppression"
+      ],
+      "cons": [
+        "Premium over basic Gold units"
+      ],
+      "priceMin": 8500,
+      "priceMax": 10000
+    },
+    {
+      "name": "Seasonic Focus GX-750",
+      "wattage": "750W",
+      "efficiency": "80+ Gold",
+      "modular": "Fully Modular",
+      "formFactor": "ATX",
+      "atx12vhpwr": false,
+      "warranty": "10 Years",
+      "launched": "2022",
+      "price": "₹9,500–11,500",
+      "tier": "High-End",
+      "useCase": [
+        "High-End Gaming",
+        "RTX 4080/5070 Ti class builds",
+        "Content Creation Workstation"
+      ],
+      "desc": "Seasonic's build quality is industry-respected - this unit comfortably powers RTX 4080-class builds with headroom for high core-count CPUs running at full load alongside the GPU during rendering tasks.",
+      "pros": [
+        "Excellent build quality/reliability",
+        "10-year warranty",
+        "Strong headroom for high-end builds"
+      ],
+      "cons": [
+        "Higher price point"
+      ],
+      "priceMin": 9500,
+      "priceMax": 11500
+    },
+    {
+      "name": "Corsair RM1000x SHIFT",
+      "wattage": "1000W",
+      "efficiency": "80+ Gold",
+      "modular": "Fully Modular (Side-mounted)",
+      "formFactor": "ATX",
+      "atx12vhpwr": true,
+      "warranty": "10 Years",
+      "launched": "2023",
+      "price": "₹15,500–32,000",
+      "tier": "Flagship",
+      "useCase": [
+        "4K Gaming",
+        "RTX 4090/5080 class builds",
+        "AI/ML Workstation"
+      ],
+      "desc": "Built with the native 12VHPWR (ATX12VHPWR) connector required by RTX 4090/5090-class GPUs, removing the need for adapter cables that have caused melting issues on lower-quality units. Side-mounted connectors improve cable routing in modern cases.",
+      "pros": [
+        "Native 12VHPWR connector",
+        "Side-mount design improves cable routing",
+        "10-year warranty"
+      ],
+      "cons": [
+        "Expensive",
+        "Overkill unless running a flagship GPU"
+      ],
+      "priceMin": 15500,
+      "priceMax": 32000
+    },
+    {
+      "name": "ASUS ROG Thor 1200W Platinum",
+      "wattage": "1200W",
+      "efficiency": "80+ Platinum",
+      "modular": "Fully Modular",
+      "formFactor": "ATX",
+      "atx12vhpwr": true,
+      "warranty": "10 Years",
+      "launched": "2024",
+      "price": "₹38,450–41,500",
+      "tier": "Extreme",
+      "useCase": [
+        "Extreme Gaming",
+        "RTX 5090 class builds",
+        "AI/ML Workstation with multi-GPU"
+      ],
+      "desc": "Designed specifically for RTX 5090-class power draw with significant headroom remaining - suitable for overclocked extreme builds or dual-GPU AI/ML workstation setups. Native 12VHPWR connector and an OLED wattage display on the unit itself.",
+      "pros": [
+        "Massive headroom for extreme builds",
+        "80+ Platinum efficiency",
+        "OLED real-time wattage display"
+      ],
+      "cons": [
+        "Very expensive",
+        "Unnecessary for anything below flagship-tier GPUs"
+      ],
+      "priceMin": 38450,
+      "priceMax": 41500
+    }
+  ]
+}

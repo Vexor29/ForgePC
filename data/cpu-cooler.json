@@ -1,0 +1,161 @@
+{
+  "component": "CPU Cooler",
+  "lastUpdated": "2026-06",
+  "coverage": "2020-2026",
+  "types": {
+    "Stock/Air Cooler": {
+      "description": "Bundled or budget air coolers using a heatsink and single fan. Sufficient for non-overclocked, lower-TDP CPUs.",
+      "coolers": [
+        {
+          "name": "AMD Wraith Stealth (Stock/Bundled)",
+          "type": "Air Cooler (Stock)",
+          "fanSize": "Single 80mm",
+          "tdpRating": "Up to 65W",
+          "heightMm": "53mm",
+          "noiseLevel": "Quiet (low load)",
+          "launched": "Bundled 2020-2023",
+          "price": "Included with CPU",
+          "tier": "Budget",
+          "useCase": [
+            "Budget Build",
+            "Office",
+            "Locked/Non-K CPUs"
+          ],
+          "desc": "AMD's bundled stock cooler for Ryzen 5000 series 65W chips. Perfectly adequate for non-overclocked builds with moderate workloads, but offers no overclocking headroom and gets audibly loud under sustained heavy load.",
+          "pros": [
+            "Free with CPU purchase",
+            "Adequate for stock 65W CPUs"
+          ],
+          "cons": [
+            "No overclocking headroom",
+            "Gets loud under sustained load",
+            "Not included with higher-TDP CPUs"
+          ],
+          "priceMin": 0,
+          "priceMax": 0
+        },
+        {
+          "name": "Cooler Master Hyper 212 Black Edition",
+          "type": "Air Cooler (Tower)",
+          "fanSize": "Single 120mm",
+          "tdpRating": "Up to 150W",
+          "heightMm": "159mm",
+          "noiseLevel": "Moderate under load",
+          "launched": "2020",
+          "price": "₹2,200–2,800",
+          "tier": "Budget-Mid",
+          "useCase": [
+            "Budget-Mid Gaming",
+            "Light Overclocking"
+          ],
+          "desc": "The most iconic budget aftermarket cooler of the past decade - massively popular for good reason, handling mid-range CPUs like the i5-13400F or Ryzen 5 7600 comfortably while keeping temps well in check.",
+          "pros": [
+            "Excellent value for cooling performance",
+            "Easy installation",
+            "Proven track record"
+          ],
+          "cons": [
+            "Limited headroom for high-TDP CPUs",
+            "Can be tall - check case clearance"
+          ],
+          "priceMin": 2200,
+          "priceMax": 2800
+        }
+      ]
+    },
+    "High-End Air Cooler": {
+      "description": "Dual-tower or large single-tower air coolers capable of handling higher-TDP CPUs and moderate overclocking, often a quieter and more reliable alternative to AIO liquid coolers.",
+      "coolers": [
+        {
+          "name": "Noctua NH-D15",
+          "type": "Air Cooler (Dual-Tower)",
+          "fanSize": "Dual 140mm",
+          "tdpRating": "Up to 250W+",
+          "heightMm": "165mm",
+          "noiseLevel": "Very Quiet",
+          "launched": "2021",
+          "price": "₹8,500–10,500",
+          "tier": "High-End",
+          "useCase": [
+            "Gaming",
+            "Content Creation",
+            "High-TDP CPU Cooling"
+          ],
+          "desc": "Widely regarded as the best air cooler available, capable of matching or beating many 240mm AIO liquid coolers while remaining near-silent. A favorite for builders who distrust AIO pump longevity and want a 'fit and forget' solution.",
+          "pros": [
+            "Best-in-class air cooling performance",
+            "Exceptionally quiet",
+            "No pump failure risk like AIOs"
+          ],
+          "cons": [
+            "Very large - check RAM and case clearance",
+            "Premium price for an air cooler"
+          ],
+          "priceMin": 8500,
+          "priceMax": 10500
+        }
+      ]
+    },
+    "AIO Liquid Cooler": {
+      "description": "All-in-one closed-loop liquid coolers, the standard choice for high-TDP flagship CPUs (i9, Ryzen 9, Core Ultra 9) and overclocked builds. Available in 240mm, 280mm, and 360mm radiator sizes.",
+      "coolers": [
+        {
+          "name": "Corsair iCUE H100i Elite Capellix (240mm)",
+          "type": "AIO Liquid Cooler",
+          "fanSize": "Dual 120mm radiator fans",
+          "tdpRating": "Up to 250W",
+          "radiatorSize": "240mm",
+          "noiseLevel": "Quiet to Moderate",
+          "launched": "2021",
+          "price": "₹11,500–12,500",
+          "tier": "Mid-Range",
+          "useCase": [
+            "Gaming",
+            "Mid-High TDP CPUs"
+          ],
+          "desc": "A reliable, well-reviewed 240mm AIO suited for CPUs like the i5-13600K or Ryzen 7 7700X. RGB pump head and software control add aesthetic appeal for showcase builds without breaking the budget on cooling.",
+          "pros": [
+            "Good cooling for mid-high TDP CPUs",
+            "RGB customization via software",
+            "Reasonable price for an AIO"
+          ],
+          "cons": [
+            "Pump has a finite lifespan vs air coolers",
+            "240mm insufficient for extreme flagship TDP"
+          ],
+          "priceMin": 11500,
+          "priceMax": 12500
+        },
+        {
+          "name": "ARCTIC Liquid Freezer III 360",
+          "type": "AIO Liquid Cooler",
+          "fanSize": "Triple 120mm radiator fans",
+          "tdpRating": "Up to 350W+",
+          "radiatorSize": "360mm",
+          "noiseLevel": "Moderate under load",
+          "launched": "2023",
+          "price": "₹8,850–12,350",
+          "tier": "High-End",
+          "useCase": [
+            "Gaming",
+            "Flagship CPUs",
+            "Overclocking",
+            "Content Creation Workstation"
+          ],
+          "desc": "Exceptional price-to-performance in the 360mm AIO category, capable of handling the most demanding flagship CPUs like the i9-14900K or Ryzen 9 9950X3D even under sustained all-core loads during rendering or compilation.",
+          "pros": [
+            "Outstanding cooling performance for the price",
+            "Handles flagship-tier TDP comfortably",
+            "VRM fan on pump block aids motherboard cooling"
+          ],
+          "cons": [
+            "Large radiator needs case clearance check",
+            "Pump noise audible under heavy load"
+          ],
+          "priceMin": 8850,
+          "priceMax": 12350
+        }
+      ]
+    }
+  }
+}

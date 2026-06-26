@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ForgePC</title>
+    <meta name="description" content="Login to your ForgePC account to save your builds and preferences.">
+    <meta property="og:title" content="ForgePC - Login">
+    <meta property="og:description" content="Login to your ForgePC account.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forgepc.com/login.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/main.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">Forge<span>PC</span></a>
+            <button class="mobile-toggle" id="mobile-toggle">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="build.html">Build with AI</a></li>
+                <li><a href="search.html">Search Parts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="active-nav">Sign up / Sign in</a></li>
+                <li style="margin-left: 1rem;"><button id="theme-toggle" class="btn btn-outline" style="padding: 0.4rem 0.8rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;" aria-label="Toggle Theme">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container section-padding" style="position: relative; overflow: hidden; min-height: calc(100vh - var(--header-height) - 300px); display: flex; align-items: center; justify-content: center;">
+        <div class="hero-glow" style="top: 50%;"></div>
+        
+        <div class="card glow-card animate-reveal" style="width: 100%; max-width: 450px; padding: 2.5rem; position: relative; z-index: 1;">
+            <div class="text-center mb-4">
+                <h2 style="font-size: 2.5rem; margin-bottom: 0.5rem;">Welcome <span>Back</span></h2>
+                <p>Login to your ForgePC account to save and share your dream rigs.</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label class="form-label" for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="you@example.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                        <label class="form-label" for="password" style="margin-bottom: 0;">Password</label>
+                        <a href="#" style="font-size: 0.85rem; color: var(--primary); text-decoration: none;">Forgot password?</a>
+                    </div>
+                    <input type="password" id="password" class="form-control" placeholder="••••••••" required>
+                </div>
+                
+                <div class="form-group" style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem;">
+                    <input type="checkbox" id="remember" style="accent-color: var(--primary); width: 1rem; height: 1rem; cursor: pointer;">
+                    <label for="remember" style="font-size: 0.9rem; color: var(--text-muted-light); cursor: pointer; margin-bottom: 0;">Remember me for 30 days</label>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 1rem;">Login to Account</button>
+            </form>
+            
+            <div class="text-center mt-4 pt-4" style="border-top: 1px solid var(--border);">
+                <p style="margin-bottom: 0; font-size: 0.95rem;">Don't have an account? <a href="register.html" style="color: var(--primary); text-decoration: none; font-weight: 600;">Sign up</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="align-items: flex-start;">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">Forge<span>PC</span></a>
+                    <p class="text-muted" style="max-width: 300px;">AI-powered PC builder helping you find the perfect components with guaranteed compatibility.</p>
+                </div>
+                <div>
+                    <h4 class="mb-2">Navigation</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+                        <li><a href="build.html" style="color: var(--text-muted); text-decoration: none;">Build with AI</a></li>
+                        <li><a href="search.html" style="color: var(--text-muted); text-decoration: none;">Search Parts</a></li>
+                        <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+                        <li><a href="login.html" style="color: var(--text-muted); text-decoration: none;">Sign up / Sign in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-text mt-4" style="border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center;">
+                &copy; 2026 ForgePC. All rights reserved. Prices and availability are subject to change based on real market data.
+                <div style="margin-top: 0.5rem; font-weight: 600; color: var(--primary);">Made for Indian Builders 🇮🇳</div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

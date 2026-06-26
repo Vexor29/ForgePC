@@ -1,0 +1,16 @@
+{
+  "name": "ForgePC - AI PC Builder",
+  "short_name": "ForgePC",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0B0E14",
+  "theme_color": "#FF8A3D",
+  "description": "Intelligent PC Builder leveraging AI to guarantee compatibility and maximize performance.",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

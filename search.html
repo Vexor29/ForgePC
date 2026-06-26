@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Parts - ForgePC</title>
+    <meta name="description" content="Search the ultimate PC components database on ForgePC.">
+    <meta property="og:title" content="ForgePC - Component Search">
+    <meta property="og:description" content="Intelligently build, customize, and find the best PC parts with compatibility checks.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://forgepc.com/search.html">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/data.js"></script>
+    <script defer src="assets/js/main.js"></script>
+    <style>
+        @media (max-width: 768px) {
+            .mobile-filters-toggle { display: block !important; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container navbar-container">
+            <a href="index.html" class="logo">Forge<span>PC</span></a>
+            <button class="mobile-toggle" id="mobile-toggle">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="build.html">Build with AI</a></li>
+                <li><a href="search.html" class="active-nav">Search Parts</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html">Sign up / Sign in</a></li>
+                <li style="margin-left: 1rem;"><button id="theme-toggle" class="btn btn-outline" style="padding: 0.4rem 0.8rem; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;" aria-label="Toggle Theme">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container section-padding">
+        <div style="background: rgba(255, 138, 61, 0.1); border: 1px solid var(--primary); padding: 1rem; margin-bottom: 2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+            <div id="data-debug-status" style="font-weight: bold; color: var(--primary);">Data Status: Loading...</div>
+            <button class="btn btn-outline" onclick="loadAllData().then(() => { document.getElementById('search-input').dispatchEvent(new Event('input')); })">Force Reload Data</button>
+        </div>
+
+        <div class="text-center mb-4">
+            <h1 class="mb-2">Search PC Components</h1>
+            <p class="text-muted" style="color: var(--text-muted-light) !important;">Find any part in our database by name. Filter by component type to narrow down results.</p>
+        </div>
+
+        <div class="mobile-filters-toggle" style="display: none; margin-bottom: 1.5rem;">
+            <button class="btn btn-outline" id="toggle-filters-btn" style="width: 100%;">Show Filters</button>
+        </div>
+
+        <div class="page-layout">
+            <!-- Sidebar -->
+            <aside class="sidebar" id="filters-sidebar">
+                <div class="card active-build-card mb-4" id="active-build-panel">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="font-size: 1.1rem; margin: 0; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                            Active Build
+                        </h3>
+                        <button class="btn-clear-build text-muted small" onclick="clearActiveBuild()" style="background:none; border:none; cursor:pointer; font-weight:600; text-transform: uppercase;">Clear</button>
+                    </div>
+                    
+                    <div class="build-slots">
+                        <button class="build-slot" id="slot-CPU" onclick="filterByCategory('CPU')">+ Add CPU</button>
+                        <button class="build-slot" id="slot-Motherboard" onclick="filterByCategory('Motherboard')">+ Add Motherboard</button>
+                        <button class="build-slot" id="slot-GPU" onclick="filterByCategory('GPU')">+ Add GPU</button>
+                        <button class="build-slot" id="slot-RAM" onclick="filterByCategory('RAM')">+ Add RAM</button>
+                        <button class="build-slot" id="slot-Storage" onclick="filterByCategory('Storage')">+ Add Storage</button>
+                        <button class="build-slot" id="slot-Power Supply" onclick="filterByCategory('Power Supply')">+ Add Power Supply</button>
+                        <button class="build-slot" id="slot-Case" onclick="filterByCategory('Case')">+ Add Case</button>
+                        <button class="build-slot" id="slot-CPU Cooler" onclick="filterByCategory('CPU Cooler')">+ Add CPU Cooler</button>
+                    </div>
+
+                    <div class="build-metrics mt-4" style="border-top: 1px solid var(--border); padding-top: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem; font-size: 0.9rem;">
+                            <span class="text-muted">Parts:</span>
+                            <span style="font-weight: 600; font-family: var(--font-mono);" id="active-parts-count">0 / 8</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; font-size: 0.9rem;">
+                            <span class="text-muted">Est. Wattage:</span>
+                            <span style="font-weight: 600; font-family: var(--font-mono);" id="active-wattage">0 W</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                            <strong style="font-size: 1.1rem;">Total:</strong>
+                            <span style="color: var(--primary); font-family: var(--font-mono); font-size: 1.2rem; font-weight: 700;" id="active-total-price">-</span>
+                        </div>
+                        <label class="checkbox-label small" style="margin-bottom: 0;">
+                            <input type="checkbox" id="compatibility-filter" checked> Compatibility Filter
+                        </label>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3 class="mb-4">Filters</h3>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">Price Range</h4>
+                        <p class="mono small" style="margin-bottom: 0;" id="price-display">₹0 - ₹100,000</p>
+                        <input type="range" id="price-slider" min="5000" max="250000" step="5000" value="250000">
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">Performance Tier</h4>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label"><input type="checkbox" data-filter="tier" value="Budget"> Entry / Budget</label>
+                            <label class="checkbox-label"><input type="checkbox" data-filter="tier" value="Mid"> Mid-Range</label>
+                            <label class="checkbox-label"><input type="checkbox" data-filter="tier" value="High"> High-End</label>
+                            <label class="checkbox-label"><input type="checkbox" data-filter="tier" value="Premium"> Premium</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-section">
+                        <h4 class="filter-title">Brands</h4>
+                        <div class="checkbox-group" id="brands-filter-container">
+                            <!-- Populated dynamically -->
+                            <p class="text-muted small">Select a category to filter brands.</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <section class="main-content">
+                <div class="search-bar-premium mb-4">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="search-icon"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="search-input" class="search-input-premium" placeholder="Search components by name — e.g. RTX 4070, Ryzen 5, Noctua...">
+                </div>
+
+                <div class="category-pills mb-4" id="category-pills">
+                    <button class="category-pill active" data-pill-cat="ALL">ALL</button>
+                    <button class="category-pill" data-pill-cat="CPU">CPU</button>
+                    <button class="category-pill" data-pill-cat="GPU">GPU</button>
+                    <button class="category-pill" data-pill-cat="RAM">RAM</button>
+                    <button class="category-pill" data-pill-cat="Motherboard">MOTHERBOARD</button>
+                    <button class="category-pill" data-pill-cat="Power Supply">PSU</button>
+                    <button class="category-pill" data-pill-cat="Storage">STORAGE</button>
+                    <button class="category-pill" data-pill-cat="Case">CASE</button>
+                    <button class="category-pill" data-pill-cat="CPU Cooler">COOLER</button>
+                </div>
+
+                <!-- Browse Category Grid (Default View) -->
+                <div id="browse-category-container">
+                    <h3 style="color: var(--primary); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; margin-bottom: 0.5rem;">Browse By Category</h3>
+                    <p class="text-muted mb-4" style="font-size: 0.95rem;">Select a category to view parts and build your custom PC.</p>
+                    
+                    <div class="browse-grid">
+                        <div class="browse-card glow-card" onclick="filterByCategory('CPU')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-pink">🧠</div></div>
+                            <div class="browse-info">
+                                <h4>CPUs</h4>
+                                <p class="text-muted mono small">Intel 12th-15th Gen · AMD Ryzen 5000-9000</p>
+                            </div>
+                        </div>
+                        <div class="browse-card glow-card" onclick="filterByCategory('GPU')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-purple">🎮</div></div>
+                            <div class="browse-info">
+                                <h4>GPUs</h4>
+                                <p class="text-muted mono small">NVIDIA RTX 30/40/50 · AMD RX 6000/7000/9000</p>
+                            </div>
+                        </div>
+                        <div class="browse-card glow-card" onclick="filterByCategory('RAM')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-orange">⚡</div></div>
+                            <div class="browse-info">
+                                <h4>RAM</h4>
+                                <p class="text-muted mono small">DDR4 · DDR5 · 16GB-64GB kits</p>
+                            </div>
+                        </div>
+                        <div class="browse-card glow-card" onclick="filterByCategory('Motherboard')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-brown">🔌</div></div>
+                            <div class="browse-info">
+                                <h4>Motherboards</h4>
+                                <p class="text-muted mono small">LGA1700 · LGA1851 · AM4 · AM5</p>
+                            </div>
+                        </div>
+                        <div class="browse-card glow-card" onclick="filterByCategory('Power Supply')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-green">🔋</div></div>
+                            <div class="browse-info">
+                                <h4>Power Supplies</h4>
+                                <p class="text-muted mono small">450W-1200W · Bronze to Platinum</p>
+                            </div>
+                        </div>
+                        <div class="browse-card glow-card" onclick="filterByCategory('Storage')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-blue">💾</div></div>
+                            <div class="browse-info">
+                                <h4>Storage</h4>
+                                <p class="text-muted mono small">SATA SSD · NVMe Gen3/4/5 · HDD</p>
+                            </div>
+                        </div>
+                        <div class="browse-card glow-card" onclick="filterByCategory('Case')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-brown-light">📦</div></div>
+                            <div class="browse-info">
+                                <h4>Cases</h4>
+                                <p class="text-muted mono small">Budget to showcase mid-towers</p>
+                            </div>
+                        </div>
+                        <div class="browse-card glow-card" onclick="filterByCategory('CPU Cooler')">
+                            <div class="browse-icon"><div class="emoji-wrapper bg-cyan">❄️</div></div>
+                            <div class="browse-info">
+                                <h4>CPU Coolers</h4>
+                                <p class="text-muted mono small">Stock · Air Tower · AIO 240mm/360mm</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Results Container (Hidden by default) -->
+                <div id="search-results-container" style="display: none;">
+                    <div class="search-header">
+                        <div id="result-count">Showing <strong>0</strong> components</div>
+                        <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+                            <select class="form-control" id="sort-select" style="width: auto; padding-right: 2rem;">
+                                <option>Relevance</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Name: A to Z</option>
+                            </select>
+                            <div style="display: flex;">
+                                <button id="btn-grid-view" class="btn btn-primary" style="border-radius: 8px 0 0 8px; padding: 0.5rem 1rem;">Grid</button>
+                                <button id="btn-list-view" class="btn btn-outline" style="border-radius: 0 8px 8px 0; padding: 0.5rem 1rem; border-left: none;">List</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="component-grid" id="component-grid">
+                        <!-- Cards will be populated here via JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content" style="align-items: flex-start;">
+                <div>
+                    <a href="index.html" class="logo" style="margin-bottom: 1rem;">Forge<span>PC</span></a>
+                    <p class="text-muted" style="max-width: 300px;">AI-powered PC builder helping you find the perfect components with guaranteed compatibility.</p>
+                </div>
+                <div>
+                    <h4 class="mb-2">Navigation</h4>
+                    <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+                        <li><a href="index.html" style="color: var(--text-muted); text-decoration: none;">Home</a></li>
+                        <li><a href="build.html" style="color: var(--text-muted); text-decoration: none;">Build with AI</a></li>
+                        <li><a href="search.html" style="color: var(--text-muted); text-decoration: none;">Search Parts</a></li>
+                        <li><a href="contact.html" style="color: var(--text-muted); text-decoration: none;">Contact</a></li>
+                        <li><a href="login.html" style="color: var(--text-muted); text-decoration: none;">Sign up / Sign in</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-text mt-4" style="border-top: 1px solid var(--border); padding-top: 1.5rem; text-align: center;">
+                &copy; 2026 ForgePC. All rights reserved. Prices and availability are subject to change based on real market data.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
