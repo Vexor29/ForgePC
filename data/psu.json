@@ -12,7 +12,7 @@
       "atx12vhpwr": false,
       "warranty": "3 Years",
       "launched": "2020",
-      "price": "₹3,200–4,000",
+      "price": "₹4,200–5,000",
       "tier": "Budget",
       "useCase": [
         "Budget Office",
@@ -27,8 +27,8 @@
         "Non-modular",
         "No headroom for any serious GPU upgrade"
       ],
-      "priceMin": 3200,
-      "priceMax": 4000
+      "priceMin": 4200,
+      "priceMax": 5000
     },
     {
       "name": "Cooler Master MWE 550 Bronze V2",
@@ -39,7 +39,7 @@
       "atx12vhpwr": false,
       "warranty": "5 Years",
       "launched": "2021",
-      "price": "₹3,500–4,300",
+      "price": "₹4,000–4,800",
       "tier": "Budget-Mid",
       "useCase": [
         "Budget Gaming",
@@ -55,8 +55,8 @@
         "Non-modular cabling",
         "No headroom for higher-end GPUs"
       ],
-      "priceMin": 3500,
-      "priceMax": 4300
+      "priceMin": 4000,
+      "priceMax": 4800
     },
     {
       "name": "Corsair RM650x",
@@ -94,7 +94,7 @@
       "atx12vhpwr": false,
       "warranty": "10 Years",
       "launched": "2022",
-      "price": "₹9,500–11,500",
+      "price": "₹22,500–23,900",
       "tier": "High-End",
       "useCase": [
         "High-End Gaming",
@@ -110,8 +110,8 @@
       "cons": [
         "Higher price point"
       ],
-      "priceMin": 9500,
-      "priceMax": 11500
+      "priceMin": 22500,
+      "priceMax": 23900
     },
     {
       "name": "Corsair RM1000x SHIFT",
@@ -122,7 +122,7 @@
       "atx12vhpwr": true,
       "warranty": "10 Years",
       "launched": "2023",
-      "price": "₹15,500–32,000",
+      "price": "₹15,500–19,000",
       "tier": "Flagship",
       "useCase": [
         "4K Gaming",
@@ -140,7 +140,7 @@
         "Overkill unless running a flagship GPU"
       ],
       "priceMin": 15500,
-      "priceMax": 32000
+      "priceMax": 19000
     },
     {
       "name": "ASUS ROG Thor 1200W Platinum",
@@ -151,7 +151,7 @@
       "atx12vhpwr": true,
       "warranty": "10 Years",
       "launched": "2024",
-      "price": "₹38,450–41,500",
+      "price": "₹22,450–25,500",
       "tier": "Extreme",
       "useCase": [
         "Extreme Gaming",
@@ -168,8 +168,8 @@
         "Very expensive",
         "Unnecessary for anything below flagship-tier GPUs"
       ],
-      "priceMin": 38450,
-      "priceMax": 41500
+      "priceMin": 22450,
+      "priceMax": 25500
     }
   ]
 }

@@ -544,7 +544,22 @@ window.showWhyExplanation = async function(btnElement, componentName, componentC
 
     try {
         const explanation = await window.getAIExplanation(window.lastGeneratedBuild, componentCategory);
-        textEl.innerHTML = explanation;
+        textEl.innerHTML = '';
+        let i = 0;
+        let isTag = false;
+        let text = explanation;
+        function typeWriter() {
+            if (i < text.length) {
+                let char = text.charAt(i);
+                if (char === '<') isTag = true;
+                if (char === '>') isTag = false;
+                textEl.innerHTML = text.substring(0, i + 1);
+                i++;
+                let delay = isTag ? 0 : 15;
+                setTimeout(typeWriter, delay);
+            }
+        }
+        typeWriter();
     } catch (err) {
         textEl.innerHTML = 'Failed to fetch AI explanation.';
     }
@@ -639,6 +654,115 @@ function initBuildPage() {
     const clearBtn = document.getElementById('clear-build-btn');
     const warningsEl = document.getElementById('build-warnings');
 
+    // Local Storage Persistence Banner
+    const savedBuildData = localStorage.getItem('savedForgeBuild');
+    if (savedBuildData && emptyState) {
+        const bannerHtml = `
+            <div id="resume-build-banner" style="width: 100%; padding: 1rem; background: rgba(255,138,61,0.1); border: 1px solid var(--primary); border-radius: 8px; margin-bottom: 1rem; display: flex; justify-content: space-between; align-items: center; animation: fadeInUp 0.5s ease;">
+                <div>
+                    <strong style="color: var(--primary);">Resume Forging</strong>
+                    <div style="font-size: 0.85rem; color: var(--text-muted-light);">You have a saved build from your last session.</div>
+                </div>
+                <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;" id="resume-build-btn">Load It</button>
+            </div>
+        `;
+        emptyState.insertAdjacentHTML('beforebegin', bannerHtml);
+        document.getElementById('resume-build-btn').addEventListener('click', () => {
+            document.getElementById('resume-build-banner').style.display = 'none';
+            try {
+                const buildResult = JSON.parse(savedBuildData);
+                window.lastGeneratedBuild = buildResult;
+                renderBuildResults(buildResult);
+            } catch (e) {
+                console.error("Failed to load saved build", e);
+            }
+        });
+    }
+
+    function renderBuildResults(buildResult) {
+        loadingState.style.display = 'none';
+        emptyState.style.display = 'none';
+        resultsContainer.innerHTML = '';
+        totalArea.style.display = 'none';
+        
+        if (buildResult.warnings && buildResult.warnings.length > 0) {
+            warningsEl.innerHTML = buildResult.warnings.map(w => `<div style="color: var(--primary); margin-bottom: 0.25rem;">⚠ ${w}</div>`).join('');
+        }
+
+        let delay = 0;
+        const order = ['CPU', 'GPU', 'Motherboard', 'RAM', 'Storage', 'Power Supply', 'Case', 'CPU Cooler'];
+        
+        order.forEach(cat => {
+            const comp = buildResult.components[cat];
+            if (!comp) return;
+
+            const tierBadge = comp.tier ? `<span class="badge badge-${getTierClass(comp.tier)}">${comp.tier}</span>` : '';
+            const specsHtml = comp.keySpecs ? comp.keySpecs.split(' | ').filter(Boolean).join(' • ') : 'N/A';
+
+            const cardHtml = `
+                <div class="card glow-card animate-reveal build-card" style="animation-delay: ${delay}s">
+                    <div class="build-card-content" style="display: flex; flex-direction: column; width: 100%; gap: 1rem;">
+                        <div class="build-card-header">
+                            <div class="build-info" style="flex-grow: 1;">
+                                <div style="margin-bottom: 0.25rem;">
+                                    <small style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.75rem;">${cat}</small>
+                                </div>
+                                <h3 class="component-title" style="margin-bottom: 0.25rem; font-size: 1.1rem;">${comp.name}</h3>
+                                <p class="component-specs mono text-muted" style="margin-bottom: 0.5rem; font-size: 0.8rem;">${specsHtml}</p>
+                                <div style="display: flex; gap: 0.5rem; align-items: center;">
+                                    ${tierBadge}
+                                    <span class="mono" style="font-weight: 600; color: var(--text-primary); font-size: 1.1rem;">${comp.formattedPrice}</span>
+                                </div>
+                            </div>
+                            <div class="build-actions" style="flex-shrink: 0;">
+                                <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="showWhyExplanation(this, '${comp.name.replace(/'/g, "\\'")}', '${cat}')">Why this part?</button>
+                            </div>
+                        </div>
+                        <div class="gemini-explanation">
+                            <div class="gemini-eyebrow">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
+                                Gemini Explanation
+                            </div>
+                            <p class="explanation-text"></p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            resultsContainer.insertAdjacentHTML('beforeend', cardHtml);
+            delay += 0.1;
+        });
+
+        // Budget Allocation Bar Logic
+        let barHtml = '<div class="allocation-bar-container">';
+        let legendHtml = '<div class="allocation-legend">';
+        order.forEach(cat => {
+            const comp = buildResult.components[cat];
+            if (comp && buildResult.total > 0) {
+                const percent = (comp.parsedPrice / buildResult.total) * 100;
+                let cssClass = '';
+                if (cat === 'CPU') cssClass = 'cpu';
+                else if (cat === 'GPU') cssClass = 'gpu';
+                else if (cat === 'Motherboard') cssClass = 'motherboard';
+                else if (cat === 'RAM') cssClass = 'ram';
+                else if (cat === 'Storage') cssClass = 'storage';
+                else if (cat === 'Power Supply') cssClass = 'psu';
+                else if (cat === 'Case') cssClass = 'case';
+                else if (cat === 'CPU Cooler') cssClass = 'cooler';
+                
+                barHtml += `<div class="allocation-segment ${cssClass}" style="width: ${percent}%;" title="${cat}: ${comp.formattedPrice}"></div>`;
+                legendHtml += `<div class="legend-item"><div class="legend-color allocation-segment ${cssClass}" style="width: 8px; height: 8px; flex-shrink: 0;"></div><span>${cat} (${percent.toFixed(0)}%)</span></div>`;
+            }
+        });
+        barHtml += '</div>';
+        legendHtml += '</div>';
+
+        document.getElementById('build-total-price').innerHTML = formatPriceNum(buildResult.total) + barHtml + legendHtml;
+        
+        resultsContainer.style.display = 'flex';
+        totalArea.style.display = 'flex';
+    }
+
     // Data loaded in DOMContentLoaded hook
 
     buildForm.addEventListener('submit', (e) => {
@@ -661,61 +785,9 @@ function initBuildPage() {
             const maxBudget = parseInt(budgetInputMax.value, 10);
             
             const buildResult = await generateRealBuild(useCase, minBudget, maxBudget);
+            localStorage.setItem('savedForgeBuild', JSON.stringify(buildResult));
             
-            loadingState.style.display = 'none';
-            resultsContainer.innerHTML = '';
-            
-            if (buildResult.warnings && buildResult.warnings.length > 0) {
-                warningsEl.innerHTML = buildResult.warnings.map(w => `<div style="color: var(--primary); margin-bottom: 0.25rem;">⚠ ${w}</div>`).join('');
-            }
-
-            let delay = 0;
-            const order = ['CPU', 'GPU', 'Motherboard', 'RAM', 'Storage', 'Power Supply', 'Case', 'CPU Cooler'];
-            
-            order.forEach(cat => {
-                const comp = buildResult.components[cat];
-                if (!comp) return;
-
-                const tierBadge = comp.tier ? `<span class="badge badge-${getTierClass(comp.tier)}">${comp.tier}</span>` : '';
-                const specsHtml = comp.keySpecs ? comp.keySpecs.split(' | ').filter(Boolean).join(' • ') : 'N/A';
-
-                const cardHtml = `
-                    <div class="card glow-card animate-reveal build-card" style="animation-delay: ${delay}s">
-                        <div class="build-card-content" style="display: flex; flex-direction: column; width: 100%; gap: 1rem;">
-                            <div class="build-card-header">
-                                <div class="build-info" style="flex-grow: 1;">
-                                    <div style="margin-bottom: 0.25rem;">
-                                        <small style="color: var(--primary); font-weight: 600; text-transform: uppercase; font-size: 0.75rem;">${cat}</small>
-                                    </div>
-                                    <h3 class="component-title" style="margin-bottom: 0.25rem; font-size: 1.1rem;">${comp.name}</h3>
-                                    <p class="component-specs mono text-muted" style="margin-bottom: 0.5rem; font-size: 0.8rem;">${specsHtml}</p>
-                                    <div style="display: flex; gap: 0.5rem; align-items: center;">
-                                        ${tierBadge}
-                                        <span class="mono" style="font-weight: 600; color: var(--text-primary); font-size: 1.1rem;">${comp.formattedPrice}</span>
-                                    </div>
-                                </div>
-                                <div class="build-actions" style="flex-shrink: 0;">
-                                    <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="showWhyExplanation(this, '${comp.name.replace(/'/g, "\\'")}', '${cat}')">Why this part?</button>
-                                </div>
-                            </div>
-                            <div class="gemini-explanation">
-                                <div class="gemini-eyebrow">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></svg>
-                                    Gemini Explanation
-                                </div>
-                                <p class="explanation-text"></p>
-                            </div>
-                        </div>
-                    </div>
-                `;
-                
-                resultsContainer.insertAdjacentHTML('beforeend', cardHtml);
-                delay += 0.1;
-            });
-
-            totalPriceEl.innerText = formatPriceNum(buildResult.total);
-            resultsContainer.style.display = 'flex';
-            totalArea.style.display = 'block';
+            renderBuildResults(buildResult);
 
         }, 1500);
     });
@@ -1015,11 +1087,9 @@ document.addEventListener('DOMContentLoaded', () => {
             cursorDot.style.left = `${posX}px`;
             cursorDot.style.top = `${posY}px`;
             
-            // Add a tiny delay to the glow for a trailing effect
-            setTimeout(() => {
-                cursorGlow.style.left = `${posX}px`;
-                cursorGlow.style.top = `${posY}px`;
-            }, 50);
+            // Set directly, CSS transition handles the trailing delay smoothly without lagging the browser
+            cursorGlow.style.left = `${posX}px`;
+            cursorGlow.style.top = `${posY}px`;
         });
 
         // Add hover aggressive state

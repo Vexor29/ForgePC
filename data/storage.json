@@ -15,7 +15,7 @@
           "formFactor": "2.5-inch",
           "tbw": "180 TBW",
           "launched": "2020",
-          "price": "₹3,100–5,200",
+          "price": "₹8,100–10,200",
           "tier": "Budget",
           "useCase": [
             "Budget Build",
@@ -32,8 +32,8 @@
             "SATA bus speed ceiling",
             "Slower than any NVMe option"
           ],
-          "priceMin": 3100,
-          "priceMax": 5200
+          "priceMin": 8100,
+          "priceMax": 10200
         }
       ]
     },
@@ -49,7 +49,7 @@
           "formFactor": "M.2 2280",
           "tbw": "600 TBW",
           "launched": "2021",
-          "price": "₹5,500–7,000",
+          "price": "₹15,500–17,300",
           "tier": "Budget-Mid",
           "useCase": [
             "Gaming",
@@ -65,8 +65,8 @@
           "cons": [
             "Not as fast as Gen4 for large file transfers"
           ],
-          "priceMin": 5500,
-          "priceMax": 7000
+          "priceMin": 15500,
+          "priceMax": 17300
         }
       ]
     },
@@ -82,7 +82,7 @@
           "formFactor": "M.2 2280",
           "tbw": "600 TBW",
           "launched": "2021",
-          "price": "₹7,500–9,500",
+          "price": "₹25,500–29,999",
           "tier": "Mid-Range",
           "useCase": [
             "Gaming",
@@ -99,8 +99,8 @@
             "Premium over budget Gen4 options",
             "Runs warm under sustained load - heatsink recommended"
           ],
-          "priceMin": 7500,
-          "priceMax": 9500
+          "priceMin": 25500,
+          "priceMax": 29999
         },
         {
           "name": "Crucial T500 2TB",
@@ -111,7 +111,7 @@
           "formFactor": "M.2 2280",
           "tbw": "1200 TBW",
           "launched": "2023",
-          "price": "₹9,500–33,000",
+          "price": "₹29,500–33,000",
           "tier": "High-End",
           "useCase": [
             "Content Creation",
@@ -128,7 +128,7 @@
           "cons": [
             "Higher price for the capacity tier"
           ],
-          "priceMin": 9500,
+          "priceMin": 29500,
           "priceMax": 33000
         }
       ]
@@ -145,7 +145,7 @@
           "formFactor": "M.2 2280",
           "tbw": "1200 TBW",
           "launched": "2025",
-          "price": "₹16,000–20,000",
+          "price": "₹51,000–60,000",
           "tier": "Flagship",
           "useCase": [
             "Professional Rendering",
@@ -163,8 +163,8 @@
             "Significant price premium",
             "Real-world gains modest for typical gaming"
           ],
-          "priceMin": 16000,
-          "priceMax": 20000
+          "priceMin": 51000,
+          "priceMax": 60000
         }
       ]
     },
@@ -180,7 +180,7 @@
           "formFactor": "3.5-inch",
           "tbw": "N/A (rated for 24/7 NAS use)",
           "launched": "2020",
-          "price": "₹10,000–23,800",
+          "price": "₹23,000–24,800",
           "tier": "Budget-Mid",
           "useCase": [
             "Server/NAS",
@@ -197,8 +197,8 @@
             "Slow compared to any SSD",
             "Not suitable as a boot or active-use drive"
           ],
-          "priceMin": 10000,
-          "priceMax": 23800
+          "priceMin": 23000,
+          "priceMax": 24800
         }
       ]
     }

@@ -21,7 +21,7 @@
     "av1Encoding": "No",
     "launched": "Q1 2022",
     "releaseYear": "2022",
-    "price": "₹19,000–23,000",
+    "price": "₹19,000–22,000",
     "tier": "Entry",
     "useCases": [
       "Budget Gaming 1080p",
@@ -45,7 +45,7 @@
     "score4k": 10,
     "aiScore": 30,
     "priceMin": 19000,
-    "priceMax": 23000
+    "priceMax": 22000
   },
   {
     "id": "nvidia-rtx-3060-12gb",
@@ -69,7 +69,7 @@
     "av1Encoding": "No",
     "launched": "Q1 2021",
     "releaseYear": "2021",
-    "price": "₹26,000–31,000",
+    "price": "₹47,000–52,000",
     "tier": "Budget-Mid",
     "useCases": [
       "1080p/1440p Gaming",
@@ -91,8 +91,8 @@
     "score1440p": 45,
     "score4k": 25,
     "aiScore": 50,
-    "priceMin": 26000,
-    "priceMax": 31000
+    "priceMin": 47000,
+    "priceMax": 52000
   },
   {
     "id": "nvidia-rtx-3060-ti",
@@ -116,7 +116,7 @@
     "av1Encoding": "No",
     "launched": "Q4 2020",
     "releaseYear": "2020",
-    "price": "₹32,000–38,000",
+    "price": "₹47,000–52,000",
     "tier": "Mid-Range",
     "useCases": [
       "1440p Gaming",
@@ -137,8 +137,8 @@
     "score1440p": 55,
     "score4k": 30,
     "aiScore": 45,
-    "priceMin": 32000,
-    "priceMax": 38000
+    "priceMin": 47000,
+    "priceMax": 52000
   },
   {
     "id": "nvidia-rtx-3070",
@@ -162,7 +162,7 @@
     "av1Encoding": "No",
     "launched": "Q3 2020",
     "releaseYear": "2020",
-    "price": "₹38,000–45,000",
+    "price": "₹28,000–31,000",
     "tier": "High-End",
     "useCases": [
       "1440p Gaming",
@@ -184,8 +184,8 @@
     "score1440p": 65,
     "score4k": 40,
     "aiScore": 50,
-    "priceMin": 38000,
-    "priceMax": 45000
+    "priceMin": 28000,
+    "priceMax": 31000
   },
   {
     "id": "nvidia-rtx-3080-10gb",
@@ -209,7 +209,7 @@
     "av1Encoding": "No",
     "launched": "Q3 2020",
     "releaseYear": "2020",
-    "price": "₹55,000–65,000",
+    "price": "₹2,50,000–2,53,000",
     "tier": "Flagship",
     "useCases": [
       "4K Gaming",
@@ -231,8 +231,8 @@
     "score1440p": 80,
     "score4k": 60,
     "aiScore": 60,
-    "priceMin": 55000,
-    "priceMax": 65000
+    "priceMin": 250000,
+    "priceMax": 253000
   },
   {
     "id": "nvidia-rtx-3090",
@@ -256,7 +256,7 @@
     "av1Encoding": "No",
     "launched": "Q3 2020",
     "releaseYear": "2020",
-    "price": "₹85,000–1,00,000",
+    "price": "₹3,45,000–3,58,000",
     "tier": "Extreme",
     "useCases": [
       "4K/8K Gaming",
@@ -278,8 +278,8 @@
     "score1440p": 85,
     "score4k": 70,
     "aiScore": 85,
-    "priceMin": 85000,
-    "priceMax": 100000
+    "priceMin": 345000,
+    "priceMax": 358000
   },
   {
     "id": "nvidia-rtx-4060",
@@ -303,7 +303,7 @@
     "av1Encoding": "Yes",
     "launched": "Q2 2023",
     "releaseYear": "2023",
-    "price": "₹32,000–37,000",
+    "price": "₹40,000–43,000",
     "tier": "Budget-Mid",
     "useCases": [
       "1080p Gaming",
@@ -325,8 +325,8 @@
     "score1440p": 50,
     "score4k": 30,
     "aiScore": 45,
-    "priceMin": 32000,
-    "priceMax": 37000
+    "priceMin": 40000,
+    "priceMax": 43000
   },
   {
     "id": "nvidia-rtx-4060-ti-16gb",
@@ -397,7 +397,7 @@
     "av1Encoding": "Yes",
     "launched": "Q1 2024",
     "releaseYear": "2024",
-    "price": "₹62,000–72,000",
+    "price": "₹58,000–61,000",
     "tier": "High-End",
     "useCases": [
       "1440p/4K Gaming",
@@ -418,8 +418,8 @@
     "score1440p": 85,
     "score4k": 65,
     "aiScore": 65,
-    "priceMin": 62000,
-    "priceMax": 72000
+    "priceMin": 58000,
+    "priceMax": 61000
   },
   {
     "id": "nvidia-rtx-4080-super",
@@ -676,7 +676,7 @@
     "av1Encoding": "Yes",
     "launched": "Q1 2025",
     "releaseYear": "2025",
-    "price": "₹3,00,000–4,00,000",
+    "price": "₹7,80,000–8,65,000",
     "tier": "Extreme",
     "useCases": [
       "8K Gaming",
@@ -699,8 +699,8 @@
     "score1440p": 100,
     "score4k": 100,
     "aiScore": 100,
-    "priceMin": 300000,
-    "priceMax": 400000
+    "priceMin": 780000,
+    "priceMax": 865000
   },
   {
     "id": "amd-rx-6600",
@@ -724,7 +724,7 @@
     "av1Encoding": "No",
     "launched": "Q3 2021",
     "releaseYear": "2021",
-    "price": "₹18,000–22,000",
+    "price": "₹25,000–29,000",
     "tier": "Budget",
     "useCases": [
       "1080p Gaming",
@@ -746,8 +746,8 @@
     "score1440p": 35,
     "score4k": 15,
     "aiScore": 30,
-    "priceMin": 18000,
-    "priceMax": 22000
+    "priceMin": 25000,
+    "priceMax": 29000
   },
   {
     "id": "amd-rx-6700-xt",
@@ -771,7 +771,7 @@
     "av1Encoding": "No",
     "launched": "Q1 2021",
     "releaseYear": "2021",
-    "price": "₹33,000–39,000",
+    "price": "₹33,000–43,000",
     "tier": "Mid-Range",
     "useCases": [
       "1440p Gaming",
@@ -792,7 +792,7 @@
     "score4k": 35,
     "aiScore": 40,
     "priceMin": 33000,
-    "priceMax": 39000
+    "priceMax": 43000
   },
   {
     "id": "amd-rx-6800-xt",
@@ -816,7 +816,7 @@
     "av1Encoding": "No",
     "launched": "Q4 2020",
     "releaseYear": "2020",
-    "price": "₹50,000–60,000",
+    "price": "₹60,000–80,000",
     "tier": "High-End",
     "useCases": [
       "4K Gaming",
@@ -838,8 +838,8 @@
     "score1440p": 80,
     "score4k": 60,
     "aiScore": 45,
-    "priceMin": 50000,
-    "priceMax": 60000
+    "priceMin": 60000,
+    "priceMax": 80000
   },
   {
     "id": "amd-rx-7600",
@@ -953,7 +953,7 @@
     "av1Encoding": "Yes",
     "launched": "Q4 2022",
     "releaseYear": "2022",
-    "price": "₹85,000–1,00,000",
+    "price": "₹95,000–1,20,000",
     "tier": "Flagship",
     "useCases": [
       "4K Gaming",
@@ -975,8 +975,8 @@
     "score1440p": 95,
     "score4k": 85,
     "aiScore": 60,
-    "priceMin": 85000,
-    "priceMax": 100000
+    "priceMin": 95000,
+    "priceMax": 120000
   },
   {
     "id": "amd-rx-9070",
@@ -1000,7 +1000,7 @@
     "av1Encoding": "Yes",
     "launched": "Q1 2025",
     "releaseYear": "2025",
-    "price": "₹58,000–68,000",
+    "price": "₹68,000–80,000",
     "tier": "High-End",
     "useCases": [
       "1440p/4K Gaming",
@@ -1020,8 +1020,8 @@
     "score1440p": 85,
     "score4k": 68,
     "aiScore": 50,
-    "priceMin": 58000,
-    "priceMax": 68000
+    "priceMin": 68000,
+    "priceMax": 80000
   },
   {
     "id": "amd-rx-9070-xt",
@@ -1045,7 +1045,7 @@
     "av1Encoding": "Yes",
     "launched": "Q1 2025",
     "releaseYear": "2025",
-    "price": "₹70,000–82,000",
+    "price": "₹70,000–1,00,000",
     "tier": "Flagship",
     "useCases": [
       "4K Gaming",
@@ -1066,6 +1066,6 @@
     "score4k": 78,
     "aiScore": 55,
     "priceMin": 70000,
-    "priceMax": 82000
+    "priceMax": 100000
   }
 ]

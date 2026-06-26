@@ -14,7 +14,7 @@
           "voltage": "1.35V",
           "rgb": false,
           "launched": "2020-2023 (still in production)",
-          "price": "₹2,500–3,500",
+          "price": "₹10,500–12,500",
           "tier": "Budget",
           "useCase": [
             "Budget Gaming",
@@ -31,8 +31,8 @@
             "16GB tight for modern multitasking + gaming",
             "Lower bandwidth than DDR5"
           ],
-          "priceMin": 2500,
-          "priceMax": 3500
+          "priceMin": 10500,
+          "priceMax": 12500
         },
         {
           "name": "Corsair Vengeance LPX DDR4-3600 32GB (2x16GB)",
@@ -42,7 +42,7 @@
           "voltage": "1.35V",
           "rgb": false,
           "launched": "2021",
-          "price": "₹6,500–8,500",
+          "price": "₹25,500–29,500",
           "tier": "Mid-Range",
           "useCase": [
             "Gaming",
@@ -58,8 +58,8 @@
           "cons": [
             "Not expandable cheaply if DDR4 supply dwindles further"
           ],
-          "priceMin": 6500,
-          "priceMax": 8500
+          "priceMin": 25500,
+          "priceMax": 29500
         },
         {
           "name": "G.Skill Trident Z RGB DDR4-3600 32GB (2x16GB)",
@@ -69,7 +69,7 @@
           "voltage": "1.35V",
           "rgb": true,
           "launched": "2020",
-          "price": "₹17,900–26,000",
+          "price": "₹47,900–50,000",
           "tier": "High-End",
           "useCase": [
             "Gaming",
@@ -86,8 +86,8 @@
             "Premium over non-RGB equivalents",
             "DDR4 ceiling approaching as DDR5 matures"
           ],
-          "priceMin": 17900,
-          "priceMax": 26000
+          "priceMin": 47900,
+          "priceMax": 50000
         }
       ]
     },
@@ -102,7 +102,7 @@
           "voltage": "1.25V",
           "rgb": false,
           "launched": "2022",
-          "price": "₹4,500–5,500",
+          "price": "₹43,500–45,500",
           "tier": "Budget",
           "useCase": [
             "Budget Gaming",
@@ -118,8 +118,8 @@
             "16GB capacity tight for 2026 multitasking",
             "Higher CAS latency vs faster kits"
           ],
-          "priceMin": 4500,
-          "priceMax": 5500
+          "priceMin": 43500,
+          "priceMax": 45500
         },
         {
           "name": "G.Skill Flare X5 DDR5-6000 32GB (2x16GB)",
@@ -129,7 +129,7 @@
           "voltage": "1.35V",
           "rgb": false,
           "launched": "2023",
-          "price": "₹9,500–11,500",
+          "price": "₹49,500–53,500",
           "tier": "Mid-Range",
           "useCase": [
             "Gaming",
@@ -145,8 +145,8 @@
           "cons": [
             "Premium over budget DDR5 kits"
           ],
-          "priceMin": 9500,
-          "priceMax": 11500
+          "priceMin": 49500,
+          "priceMax": 53500
         },
         {
           "name": "Corsair Dominator Titanium DDR5-6400 64GB (2x32GB)",
@@ -156,7 +156,7 @@
           "voltage": "1.40V",
           "rgb": true,
           "launched": "2024",
-          "price": "₹1,12,000–1,50,000",
+          "price": "₹1,12,000–1,25,000",
           "tier": "High-End",
           "useCase": [
             "AI/ML Workstation",
@@ -175,7 +175,7 @@
             "Overkill for pure gaming use cases"
           ],
           "priceMin": 112000,
-          "priceMax": 150000
+          "priceMax": 125000
         },
         {
           "name": "Kingston Fury Renegade DDR5-7200 32GB (2x16GB)",
@@ -185,7 +185,7 @@
           "voltage": "1.40V",
           "rgb": true,
           "launched": "2025",
-          "price": "₹26,000–35,000",
+          "price": "₹1,12,000–1,15,000",
           "tier": "High-End",
           "useCase": [
             "Gaming",
@@ -200,8 +200,8 @@
           "cons": [
             "Needs a capable motherboard memory controller to hit rated speed reliably"
           ],
-          "priceMin": 26000,
-          "priceMax": 35000
+          "priceMin": 112000,
+          "priceMax": 115000
         }
       ]
     }
