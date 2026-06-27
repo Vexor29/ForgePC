@@ -989,7 +989,7 @@ window.apiFetch = async function(endpoint, options = {}) {
     }
 
     try {
-        const response = await fetch(`http://localhost:5000${endpoint}`, {
+        const response = await fetch(endpoint, {
             ...options,
             headers
         });
