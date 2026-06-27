@@ -194,6 +194,11 @@ app.get('*', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-    console.log(`ForgePC MongoDB Backend running on http://localhost:${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`ForgePC MongoDB Backend running on http://localhost:${PORT}`);
+    });
+}
+
+// Export for Vercel
+module.exports = app;
