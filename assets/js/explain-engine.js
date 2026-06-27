@@ -20,7 +20,9 @@ function buildExplainPrompt(build, focusComponent) {
   
     const scopeInstruction = `Focus your explanation specifically on the ${focusComponent.category.toUpperCase()} choice (${focusComponent.name}). Briefly mention how it works with the rest of the build, but the main explanation should be about why THIS specific ${focusComponent.category} was right for this build.`;
   
-    return `You are a knowledgeable, friendly PC-building assistant. A user wants a PC build for: "${useCase}" with a budget of ₹${requestedBudget.toLocaleString("en-IN")}.
+    const safeBudget = (requestedBudget || build.requestedBudgetMax || estimatedTotal || 0).toLocaleString("en-IN");
+
+    return `You are a knowledgeable, friendly PC-building assistant. A user wants a PC build for: "${useCase}" with a budget of ₹${safeBudget}.
   
   Here is the EXACT build that was already selected by our recommendation engine (you are NOT choosing parts — only explaining the choices already made):
   
@@ -55,10 +57,10 @@ window.getAIExplanation = async function(build, componentCategory) {
     const focusComponent = build.components[componentCategory];
     if (!focusComponent) return "Component not found in current build.";
 
-    const prompt = buildExplainPrompt(build, focusComponent);
-    console.log("✨ Gemini Prompt Constructed:\n", prompt);
-
     try {
+        const prompt = buildExplainPrompt(build, focusComponent);
+        console.log("✨ Gemini Prompt Constructed:\n", prompt);
+
         // Attempt the real fetch (will fail if no API key/auth is set up, which is expected for now)
         const response = await fetch("https://api.anthropic.com/v1/messages", {
             method: "POST",
@@ -76,9 +78,14 @@ window.getAIExplanation = async function(build, componentCategory) {
         const data = await response.json();
         return extractText(data);
     } catch (err) {
-        console.warn("AI fetch failed (likely missing API Key). Using grounded fallback response. Error:", err);
+        console.warn("AI fetch failed. Using grounded fallback response. Error:", err);
         
-        // Grounded fallback using actual component data
-        return `The <strong>${focusComponent.name}</strong> was selected for this ${build.useCase} build because it perfectly fits within the budget at ₹${focusComponent.parsedPrice.toLocaleString("en-IN")}. As a ${focusComponent.tier || "mid-range"} tier component, its specs (${focusComponent.keySpecs}) provide the exact balance of performance needed without bottlenecking the rest of your ₹${build.estimatedTotal.toLocaleString("en-IN")} system.`;
+        // Grounded fallback using actual component data (safely handling missing data)
+        const priceString = focusComponent.parsedPrice ? `₹${focusComponent.parsedPrice.toLocaleString("en-IN")}` : (focusComponent.price || "your budget");
+        const totalString = build.estimatedTotal ? `₹${build.estimatedTotal.toLocaleString("en-IN")}` : "your overall budget";
+        const specsString = focusComponent.keySpecs ? ` (${focusComponent.keySpecs})` : "";
+        const tierString = focusComponent.tier ? `${focusComponent.tier} tier ` : "";
+
+        return `The <strong>${focusComponent.name}</strong> was selected for this ${build.useCase || 'custom'} build because it perfectly fits within the budget at ${priceString}. As a ${tierString}component, its specs${specsString} provide the exact balance of performance needed without bottlenecking the rest of your ${totalString} system.`;
     }
 };

@@ -323,7 +323,7 @@ function renderComponentCards(components, containerId, showAddButton = false) {
         card.className = 'card component-card glow-card animate-reveal';
         card.style.animationDelay = `${delay}s`;
         
-        const safeName = (c.id || c.name).replace(/'/g, "\\'");
+        const safeName = (c.id || c.name).replace(/'/g, "\\'").replace(/"/g, '&quot;');
         
         card.innerHTML = `
             <div class="card-content">
@@ -652,7 +652,47 @@ function initBuildPage() {
     const totalArea = document.getElementById('build-total-area');
     const totalPriceEl = document.getElementById('build-total-price');
     const clearBtn = document.getElementById('clear-build-btn');
+    const saveBtn = document.getElementById('save-build-btn');
     const warningsEl = document.getElementById('build-warnings');
+
+    if (saveBtn) {
+        saveBtn.addEventListener('click', async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                if(window.showToast) window.showToast('Please log in to save your build.', 'error');
+                setTimeout(() => window.location.href = 'login.html', 1500);
+                return;
+            }
+            if (!window.lastGeneratedBuild || !window.lastGeneratedBuild.total) {
+                if(window.showToast) window.showToast('No build to save.', 'error');
+                return;
+            }
+            
+            const buildName = prompt('Name your build:', 'My Custom Build');
+            if (!buildName) return; // User cancelled
+            
+            saveBtn.disabled = true;
+            const originalText = saveBtn.innerHTML;
+            saveBtn.innerHTML = 'Saving...';
+            
+            try {
+                const data = await window.apiFetch('/api/user/builds', {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        buildName: buildName,
+                        buildData: window.lastGeneratedBuild.components,
+                        totalPrice: window.lastGeneratedBuild.total
+                    })
+                });
+                if(window.showToast) window.showToast('Build saved successfully! You can view it in your dashboard.', 'success');
+            } catch (err) {
+                console.error("Save Build Error:", err);
+            } finally {
+                saveBtn.disabled = false;
+                saveBtn.innerHTML = originalText;
+            }
+        });
+    }
 
     // Local Storage Persistence Banner
     const savedBuildData = localStorage.getItem('savedForgeBuild');
@@ -715,7 +755,7 @@ function initBuildPage() {
                                 </div>
                             </div>
                             <div class="build-actions" style="flex-shrink: 0;">
-                                <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="showWhyExplanation(this, '${comp.name.replace(/'/g, "\\'")}', '${cat}')">Why this part?</button>
+                                <button class="btn btn-outline" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="showWhyExplanation(this, '${comp.name.replace(/'/g, "\\'").replace(/"/g, '&quot;')}', '${cat}')">Why this part?</button>
                             </div>
                         </div>
                         <div class="gemini-explanation">
@@ -866,7 +906,7 @@ window.showComponentDetails = function(safeName, category) {
     const allComps = window.getAllComponents ? window.getAllComponents() : [];
     comp = allComps.find(c => {
          const cSafeName = (c.name || '').replace(/[^a-zA-Z0-9]/g, '-');
-         return cSafeName === safeName || c.slug === safeName || c.id === safeName;
+         return c.name === safeName || cSafeName === safeName || c.slug === safeName || c.id === safeName;
     });
 
     if (!comp) {
@@ -1103,7 +1143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (document.getElementById('particles-js') && window.particlesJS) {
         particlesJS('particles-js', {
             "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+                "number": { "value": 150, "density": { "enable": true, "value_area": 800 } },
                 "color": { "value": "#FF8A3D" },
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.5, "random": true },
@@ -1117,7 +1157,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 "move": {
                     "enable": true,
-                    "speed": 3,
+                    "speed": 1.5,
                     "direction": "none",
                     "random": true,
                     "straight": false,
@@ -1133,7 +1173,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     "resize": true
                 },
                 "modes": {
-                    "grab": { "distance": 200, "line_linked": { "opacity": 1 } },
+                    "grab": { "distance": 350, "line_linked": { "opacity": 0.6 } },
                     "push": { "particles_nb": 4 }
                 }
             },

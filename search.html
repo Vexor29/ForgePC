@@ -37,9 +37,9 @@
     </nav>
 
     <main class="container section-padding">
-        <div style="background: rgba(255, 138, 61, 0.1); border: 1px solid var(--primary); padding: 1rem; margin-bottom: 2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <div id="data-debug-status" style="font-weight: bold; color: var(--primary);">Data Status: Loading...</div>
-            <button class="btn btn-outline" onclick="loadAllData().then(() => { document.getElementById('search-input').dispatchEvent(new Event('input')); })">Force Reload Data</button>
+        <div style="position: fixed; top: 90px; right: 20px; background: rgba(27, 34, 48, 0.8); border: 1px solid var(--primary); padding: 0.5rem 1rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem; z-index: 1000; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+            <div id="data-debug-status" style="font-weight: bold; color: var(--primary); font-size: 0.85rem;">Data Status: Loading...</div>
+            <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.85rem;" onclick="loadAllData().then(() => { document.getElementById('search-input').dispatchEvent(new Event('input')); })">Force Reload</button>
         </div>
 
         <div class="text-center mb-4">

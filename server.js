@@ -9,6 +9,7 @@ const path = require('path');
 // Models
 const User = require('./models/User');
 const Build = require('./models/Build');
+const Message = require('./models/Message');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -166,6 +167,24 @@ app.get('/api/auth/me', authenticateToken, async (req, res) => {
         res.json({ user });
     } catch (err) {
         res.status(500).json({ error: 'Server error' });
+    }
+});
+
+// 6. Submit Contact Message
+app.post('/api/contact', async (req, res) => {
+    try {
+        const { name, email, message } = req.body;
+        if (!name || !email || !message) {
+            return res.status(400).json({ error: 'Please provide all fields.' });
+        }
+        
+        const newMessage = new Message({ name, email, message });
+        await newMessage.save();
+        
+        res.status(201).json({ success: true, message: 'Message sent successfully!' });
+    } catch (err) {
+        console.error('Contact Form Error:', err);
+        res.status(500).json({ error: 'Internal server error while sending message.' });
     }
 });
 

@@ -76,9 +76,9 @@
     </nav>
 
     <main class="container section-padding" style="max-width: 1200px;">
-        <div style="background: rgba(255, 138, 61, 0.1); border: 1px solid var(--primary); padding: 1rem; margin-bottom: 2rem; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-            <div id="data-debug-status" style="font-weight: bold; color: var(--primary);">Data Status: Loading...</div>
-            <button class="btn btn-outline" onclick="loadAllData()">Force Reload Data</button>
+        <div style="position: fixed; top: 90px; right: 20px; background: rgba(27, 34, 48, 0.8); border: 1px solid var(--primary); padding: 0.5rem 1rem; border-radius: 8px; display: flex; align-items: center; gap: 1rem; z-index: 1000; backdrop-filter: blur(10px); box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
+            <div id="data-debug-status" style="font-weight: bold; color: var(--primary); font-size: 0.85rem;">Data Status: Loading...</div>
+            <button class="btn btn-outline" style="padding: 0.3rem 0.8rem; font-size: 0.85rem;" onclick="loadAllData()">Force Reload</button>
         </div>
 
         <section class="hero section-padding" style="padding-bottom: 2rem; text-align: left;">
@@ -196,9 +196,13 @@
                         <div style="text-align: right;">
                             <div class="text-muted small">Total Estimated Price</div>
                             <div class="mono" id="build-total-price" style="font-size: 1.5rem; font-weight: 700; color: var(--primary);">₹0</div>
-                            <div style="display: flex; gap: 0.5rem; justify-content: flex-end; margin-top: 0.5rem;">
-                                <button class="btn btn-outline" id="clear-build-btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Restart Build</button>
-                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <button class="btn btn-outline" id="clear-build-btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem;">Restart Build</button>
+                            <button class="btn btn-primary" id="save-build-btn" style="padding: 0.25rem 0.75rem; font-size: 0.875rem; display: flex; align-items: center; gap: 0.3rem;">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+                                Save Build
+                            </button>
                         </div>
                     </div>
 
